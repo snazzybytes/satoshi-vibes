@@ -1,0 +1,55 @@
+// TODO - create new QUOTES page with paging/sort/etc
+// TODO - add PAGING to new Quotes page
+
+// import Head from "next/head"
+// import Layout, { siteTitle } from "@/components/layout"
+// import utilStyles from "../styles/utils.module.css"
+// import { getSortedQuotesData } from "@/lib/quotes"
+// import Link from "next/link"
+// import PublishedDate from "@/components/publishedDate"
+// import { GetStaticProps } from "next"
+// import { QuoteData } from "@/interfaces/quotedata"
+
+// export default function Quotes({ allQuotesData }: Props) {
+//   return (
+//     <Layout home>
+//       <Head>
+//         <title>{siteTitle}</title>
+//       </Head>
+
+//       <div
+//         className={`${utilStyles.stagePanel} ${utilStyles.boxShadow} ${utilStyles.headingMd}`}
+//       >
+//         <div>
+//           <h2 className={utilStyles.headingLg}>Quotes</h2>
+//           <ul className={utilStyles.list}>
+//             {allQuotesData.map(({ id, title, date, category, medium }) => (
+//               <li className={utilStyles.listItem} key={id}>
+//                 <Link href={`/quotes/${id}`}>
+//                   <a>{title}</a>
+//                 </Link>
+//                 <br />
+//                 <small className={utilStyles.lightText}>
+//                   <PublishedDate dateStr={date} />
+//                 </small>
+//               </li>
+//             ))}
+//           </ul>
+//         </div>
+//       </div>
+//     </Layout>
+//   )
+// }
+
+// type Props = {
+//   allQuotesData: QuoteData[]
+// }
+
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const allQuotesData = getSortedQuotesData()
+//   return {
+//     props: {
+//       allQuotesData,
+//     },
+//   }
+// }

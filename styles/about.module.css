@@ -1,0 +1,61 @@
+.aboutPanel {
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem 1rem;
+  background-color: #182538;
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  .aboutPanel {
+    max-width: 80%;
+  }
+}
+@media (min-width: 1201px) {
+  .aboutPanel {
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .aboutPanel {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .aboutPanel {
+    max-width: 60%;
+  }
+}
+
+.aboutPanel p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: left;
+  text-indent: 1rem;
+}
+.aboutPanel a {
+  text-decoration: underline;
+}
+
+.aboutPanel a:hover {
+  text-decoration: underline;
+  color: #8595ae;
+}
+
+.aboutPanel h3 {
+  text-align: center;
+}
+
+/* wrap the Image component for padding/etc */
+.imageWrapper {
+  padding: 1rem;
+  box-sizing: content-box;
+  margin: 0rem 1rem;
+  text-align: center;
+}
+
+.header {
+  margin: 0.5rem 0 0;
+}

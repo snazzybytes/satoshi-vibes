@@ -1,0 +1,83 @@
+/* Layout's outermost div. Using flex/column/space-between to achieve "sticky footer" */
+.container {
+  margin: 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.mainStage {
+  /* with margin-bottom:'auto' main stage gets pushed up */
+  /* with it, the main stage is center in the middle... since wrapping container is flex/column/center */
+  margin-bottom: auto;
+  padding-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* FYI: height of 100% breaks the sticky footer effect
+    we are already inside of container's flex layout*/
+}
+
+/* logo with text side-by-side (flex row) */
+.header {
+  /* 40px is height of header */
+  margin: calc(50px + 1rem) 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* back button scale up animation */
+.back {
+  height: 36;
+  cursor: pointer;
+  transition: transform 0.125s; /* Animation */
+}
+
+.back:hover {
+  transform: scale(1.3);
+}
+
+/* container for button icons to
+  make default 24x24 image larger */
+.backHomeButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 1rem 0rem;
+  font-size: 24px;
+  transition: transform 0.125s; /* Animation */
+}
+
+.backHomeButton:hover {
+  transform: scale(1.2);
+}
+
+.scaledImage {
+  z-index: 0;
+}
+
+.scaledImage:hover {
+  z-index: 1;
+}
+
+.scaledImage img {
+  /* Animation */
+  transform: scale(1);
+  transition: all 0.125s ease-in-out;
+}
+
+/* needed for crisp (not blurry) img hover scale effect */
+.scaledImage img:hover {
+  /* Animation */
+  transform: scale(1.2);
+  transition: all 0.125s ease-in-out;
+}

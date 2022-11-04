@@ -1,0 +1,27 @@
+.footerContainer {
+  color: #8595ae;
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+}
+
+.footerContainer::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #304057;
+}
+
+.footerContainer p {
+  margin: 0.2rem;
+}
+
+.imageContainer {
+  padding: 1rem 0rem;
+}
