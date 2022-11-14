@@ -1,0 +1,138 @@
+.headerContainer {
+  z-index: 1;
+  background: #000;
+  color: #8595ae;
+  font-size: 16px;
+  text-align: left;
+  border-bottom: 1px solid #304057;
+  margin: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  /* hamburger gets moved to the right - flex end */
+  justify-content: flex-end;
+  align-items: center;
+  /* fixed to achieve sticky footer w/ no scroll */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* bitcoin price info panel */
+.pricePanel {
+  margin-left: 0rem;
+  /* 'auto' will push the price panel to left corner inside headerContainer */
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.pricePanel img {
+  margin-left: 0.2rem;
+}
+
+/* container for hamburger menu to
+  make default image larger */
+.hamburger {
+  /* removes default border on button element */
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  margin: 0 0.5rem;
+  /* positions the icon to the right and center aligns it vertically */
+  position: relative;
+  top: 0px;
+  right: 0.5rem;
+  /* this hides the hamburger from being displayed */
+  /* display: none; */
+}
+
+/* common for active/inactive navigation */
+.activeNavigationMenu ul,
+.navigationMenu ul {
+  /* flex when you want traditional menu along the top */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  /* ensures menu is on TOP of everything */
+  z-index: 1;
+  /* show menu directly below header bar */
+  position: fixed;
+  top: 49px;
+  right: 0px;
+  /* makes menu span full height and width */
+  width: 100%;
+  height: 100vh;
+  background-color: #152234;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.navigationMenu ul {
+  box-shadow: none;
+}
+
+/* onClick() slides out into position */
+.activeNavigationMenu ul {
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* onClick() moves off the screen to the right */
+.navigationMenu ul {
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* common - required for transitions */
+.activeNavigationMenu li,
+.navigationMenu li {
+  /* removes default disc bullet for li tags and applies margin to left & right side */
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  border-bottom: 2px solid #202d3f;
+  width: 100%;
+}
+/* common - required for transitions */
+.activeNavigationMenu li a,
+.navigationMenu li a {
+  /* increases the surface area of the anchor tag to span more than just the anchor text */
+  text-decoration: none;
+  display: block;
+  padding: 0;
+}
+
+@media (hover) {
+  /* use only on hover enabled devices i.e desktop */
+  .activeNavigationMenu li:hover,
+  .navigationMenu li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+.activeNavigationMenu li:active,
+.navigationMenu li:active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.activeNavigationMenu,
+.navigationMenu {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* helps us have logo + text side by side */
+.menuItemContainer {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

@@ -1,0 +1,15 @@
+.errorPanel {
+  text-align: center;
+  margin: 1rem;
+  padding: 0 1.5rem;
+  background-color: #182538;
+}
+
+/* you need to wrap the Image component for padding/etc */
+.imageWrapper {
+  box-sizing: content-box;
+  text-align: center;
+  object-fit: contain;
+  height: fit-content;
+  border-radius: 5px;
+}

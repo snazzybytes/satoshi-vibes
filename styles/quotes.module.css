@@ -1,0 +1,108 @@
+/* TODO move below panels to separate CSS module file */
+.stagePanel {
+  background-color: #182538;
+  display: block;
+  margin: 1rem 1rem 1rem;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  /* over hides the Quote panel header from
+    overflowing into the rounded-corners */
+  overflow: hidden;
+  height: auto;
+  min-width: 30%;
+}
+
+.stagePanel h2 {
+  margin: 0;
+  text-align: center;
+}
+
+/* thin line under Quotes panel header */
+.stagePanel h2::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #304057;
+  display: block;
+}
+
+.stagePanel a:hover {
+  text-decoration: underline;
+  color: #8595ae;
+}
+
+.article {
+  background-color: #182538;
+  padding: 1rem;
+  margin: 1rem;
+  max-width: calc(100% - 2rem);
+}
+
+/* smaller tablet type 800px+ */
+@media only screen and (min-width: 1000px) {
+  /* used on /categories/[slug] page */
+  .stagePanel {
+    max-width: 60%;
+  }
+
+  /* used on "/quotes/[id]" page */
+  .article {
+    max-width: 60%;
+  }
+}
+
+/* larger resolution screens 1600px+ */
+@media only screen and (min-width: 1600px) {
+  /* used on index page */
+  .stagePanel {
+    max-width: 50%;
+  }
+
+  /* used on "/quotes/[id]" page */
+  .article {
+    max-width: 55%;
+  }
+}
+
+/* larger resolution screens 1600px+ */
+@media only screen and (min-width: 2000px) {
+  /* used on index page */
+  .stagePanel {
+    max-width: 30%;
+  }
+
+  /* used on "/quotes/[id]" page */
+  .article {
+    max-width: 40%;
+  }
+}
+
+.article::after {
+  /* thin line under article quote */
+  margin-top: 1rem;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #304057;
+  display: block;
+}
+
+/* TURN OFF word-wrap styling for category/source
+quote tags (keep it only in the quote .article) */
+.quoteTags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.quoteTag {
+  display: flex;
+  align-items: center;
+}
+
+/* print an empty space after category string */
+.quoteTag::after {
+  content: "\00a0";
+}
