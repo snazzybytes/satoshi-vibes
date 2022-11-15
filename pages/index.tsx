@@ -54,6 +54,7 @@ export default function Categories({ allCategories }: Props) {
               className={`${styles.categoryItem} ${styles.headingMd}`}
               href={`/categories/${slug}`}
               key={index}
+              onTouchStart={void 0}
             >
               {name}
             </Link>
