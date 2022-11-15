@@ -7,15 +7,13 @@ import { getAllQuoteCategories } from "@/lib/quotes"
 import Layout, { siteTitle } from "@/components/layout"
 import utilStyles from "@/styles/utils.module.css"
 import styles from "@/styles/categories.module.css"
-import { useEffect } from "react"
+import React, { TouchEvent, TouchEventHandler } from "react"
 
 export default function Categories({ allCategories }: Props) {
-  useEffect(() => {
-    document.addEventListener("touchstart", function () {}, true)
-    return () => {
-      document.body.removeEventListener("touchstart", function () {})
-    }
-  }, [])
+  const handleTouchEvent: TouchEventHandler = (e: TouchEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    // Do something
+  }
 
   return (
     <Layout home>
