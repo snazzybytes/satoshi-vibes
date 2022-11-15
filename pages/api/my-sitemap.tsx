@@ -1,6 +1,6 @@
 import { SitemapStream, streamToPromise } from "sitemap"
 import { Readable } from "stream"
-import { getAllQuoteIds } from "@/lib/quotes"
+import { getAllQuoteIds, getAllQuoteCategories } from "@/lib/quotes"
 
 import { NextApiRequest, NextApiResponse } from "next"
 
@@ -14,9 +14,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       priority: 0.9,
     })
   })
-
+  // individual category links
+  getAllQuoteCategories().map(cat => {
+    links.push({
+      url: `/categories/${cat.slug}`,
+      changefreq: "daily",
+      priority: 0.9,
+    })
+  })
   // other pages
-  const pages = ["/categories", "/quotes", "/about"]
+  const pages = ["/", "/about"]
   pages.map(url => {
     links.push({
       url,
