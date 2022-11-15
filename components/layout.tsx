@@ -109,8 +109,8 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
         <Header />
         <motion.div
           exit={{ opacity: 0 }}
-          initial="initial"
-          animate="animate"
+          // initial="initial"
+          // animate="animate"
           // className={styles.mainStage}
         >
           <motion.div variants={fadeInDown} className={`${styles.header} ${utilStyles.textCenter}`}>
