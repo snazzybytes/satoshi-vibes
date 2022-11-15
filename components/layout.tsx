@@ -111,68 +111,68 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
           exit={{ opacity: 0 }}
           initial="initial"
           animate="animate"
-          className={styles.mainStage}
+          // className={styles.mainStage}
         >
-          <motion.div variants={fadeInDown}>
-            <div className={`${styles.header} ${utilStyles.textCenter}`}>
-              {home && (
-                <>
-                  <div onClick={togglePlay}>
+          <motion.div variants={fadeInDown} className={`${styles.header} ${utilStyles.textCenter}`}>
+            {home && (
+              <>
+                <div onClick={togglePlay}>
+                  <Image
+                    priority
+                    src="/btclogo.png"
+                    className={utilStyles.borderCircle}
+                    height={630 / 5}
+                    width={683 / 5}
+                    alt="Bitcoin is infinitely divisible."
+                  />
+                </div>
+                <h3 className={utilStyles.heading2Xl}>{name}</h3>
+              </>
+            )}
+            {genericHeroImg && (
+              <div className={styles.scaledImage}>
+                <Link href="/">
+                  <a>
                     <Image
                       priority
-                      src="/btclogo.png"
-                      className={utilStyles.borderCircle}
-                      height={630 / 5}
-                      width={683 / 5}
-                      alt="Bitcoin is infinitely divisible."
+                      src="/astronaut.png"
+                      height={764 / 4}
+                      width={771 / 4}
+                      alt="Bitcoin Astronaut hero image"
                     />
-                  </div>
-                  <h3 className={utilStyles.heading2Xl}>{name}</h3>
-                </>
-              )}
-              {genericHeroImg && (
-                <div className={styles.scaledImage}>
-                  <Link href="/">
-                    <a>
-                      <Image
-                        priority
-                        src="/astronaut.png"
-                        height={764 / 4}
-                        width={771 / 4}
-                        alt="Bitcoin Astronaut hero image"
-                      />
-                    </a>
-                  </Link>
-                </div>
-              )}
-            </div>
-          </motion.div>
-          <main className={styles.mainStage}>
-            {/* this is where all your child components get inserted */}
-            {children}
-            {!home && homeButton && (
-              <Link href="/">
-                <a>
-                  <div className={`${styles.backHomeButton}`}>
-                    <Image priority src={"/icons/arrowleft.svg"} height={36} width={36} alt="" />
-                    <Image priority src="/icons/home.svg" alt="" height={36} width={36} />
-                  </div>
-                </a>
-              </Link>
-            )}
-            {backButton && (
-              <div className={`${styles.back}`} onClick={() => router.back()}>
-                <Image
-                  priority
-                  src="/icons/arrowleft.svg"
-                  height={36}
-                  width={36}
-                  alt="Back to previous page"
-                  style={{ objectFit: "contain" }}
-                />
+                  </a>
+                </Link>
               </div>
             )}
-          </main>
+          </motion.div>
+          <motion.div variants={fadeInUp}>
+            <main className={styles.mainStage}>
+              {/* this is where all your child components get inserted */}
+              {children}
+              {!home && homeButton && (
+                <Link href="/">
+                  <a>
+                    <div className={`${styles.backHomeButton}`}>
+                      <Image priority src={"/icons/arrowleft.svg"} height={36} width={36} alt="" />
+                      <Image priority src="/icons/home.svg" alt="" height={36} width={36} />
+                    </div>
+                  </a>
+                </Link>
+              )}
+              {backButton && (
+                <div className={`${styles.back}`} onClick={() => router.back()}>
+                  <Image
+                    priority
+                    src="/icons/arrowleft.svg"
+                    height={36}
+                    width={36}
+                    alt="Back to previous page"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+              )}
+            </main>
+          </motion.div>
         </motion.div>
         <Footer />
       </div>

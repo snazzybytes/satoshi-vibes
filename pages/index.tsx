@@ -15,8 +15,8 @@ export default function Categories({ allCategories }: Props) {
         <title>{siteTitle}</title>
       </Head>
       <h2 className={styles.headingLg}>choose category</h2>
-      <div className={styles.caretContainter}>
-        <div className={styles.imageContainer}>
+      <div className={styles.caretContainter} key="caretContainer">
+        <div className={styles.imageContainer} key="caret1">
           <Image
             priority
             src="/icons/caretdown.svg"
@@ -26,7 +26,7 @@ export default function Categories({ allCategories }: Props) {
             alt=""
           />
         </div>
-        <div className={styles.imageContainer}>
+        <div className={styles.imageContainer} key="caret2">
           <Image
             priority
             src="/icons/caretdown.svg"
@@ -36,7 +36,7 @@ export default function Categories({ allCategories }: Props) {
             alt=""
           />
         </div>
-        <div className={styles.imageContainer}>
+        <div className={styles.imageContainer} key="caret3">
           <Image
             priority
             src="/icons/caretdown.svg"
@@ -47,8 +47,8 @@ export default function Categories({ allCategories }: Props) {
           />
         </div>
       </div>
-      <div className={`${styles.categoryPanel} ${utilStyles.boxShadow}`}>
-        <div className={`${styles.categoriesContainer}`}>
+      <div className={`${styles.categoryPanel} ${utilStyles.boxShadow}`} key="categoryPanel">
+        <div className={`${styles.categoriesContainer}`} key="categoryContainer">
           {allCategories.map(({ name, slug }, index) => (
             <Link
               className={`${styles.categoryItem} ${styles.headingMd}`}

@@ -1,4 +1,5 @@
 .footerContainer {
+  margin-top: auto;
   color: #8595ae;
   background: #000;
   display: flex;
