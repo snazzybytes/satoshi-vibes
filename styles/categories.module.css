@@ -95,14 +95,15 @@
 
 .categoryItem:hover,
 .categoryItem:active {
+  -webkit-tap-highlight-color: #f68819;
   background-color: #f68819;
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.2s ease-out;
-  -webkit-transition: background-color 50ms linear;
-  -ms-transition: background-color 50ms linear;
-  transition: background-color 50ms linear;
+  -webkit-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
 }
 
 @media only screen and (min-width: 1200px) {
