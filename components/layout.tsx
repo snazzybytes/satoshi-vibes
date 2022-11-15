@@ -37,7 +37,7 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} onTouchStart={void 0} onMouseOver={void 0}>
         <Head>
           <link rel="icon" type="image/svg" href="/icons/btcfavicon.svg" />
           <meta
