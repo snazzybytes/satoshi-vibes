@@ -12,6 +12,9 @@ import { useEffect } from "react"
 export default function Categories({ allCategories }: Props) {
   useEffect(() => {
     document.addEventListener("touchstart", function () {}, true)
+    return () => {
+      document.body.removeEventListener("touchstart", function () {})
+    }
   }, [])
 
   return (
