@@ -7,6 +7,7 @@ import Header from "./header"
 import Footer from "./footer"
 import styles from "./layout.module.css"
 import utilStyles from "@/styles/utils.module.css"
+import { motion } from "framer-motion"
 
 //🍊💊 ₿ Fix the money, fix the world!"
 export const siteTitle = "🍊💊 Satoshi Nakamoto Quotes Wiki"
@@ -19,6 +20,25 @@ type Props = {
   homeButton?: boolean
   backButton?: boolean
   children: React.ReactNode
+}
+// animate: defines animation.
+// initial: defines initial state of animation
+// exit: defines animation for when component exits
+const easing = [0.6, -0.05, 0.01, 0.99]
+
+const fadeInUp = {
+  initial: {
+    y: 60,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.6,
+      ease: easing,
+    },
+  },
 }
 
 const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Props) => {
@@ -35,6 +55,23 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
   useEffect(() => {
     playing ? audio?.play() : audio?.pause()
   }, [playing])
+
+  const easing = [0.6, -0.05, 0.01, 0.99]
+
+  const fadeInUp = {
+    initial: {
+      y: -80,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: easing,
+      },
+    },
+  }
 
   return (
     <>
@@ -55,71 +92,71 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
         </Head>
 
         <Header />
-        <header className={`${styles.header} ${utilStyles.textCenter}`}>
-          {home && (
-            <>
-              <div onClick={togglePlay}>
-                <Image
-                  priority
-                  src="/btclogo.png"
-                  className={utilStyles.borderCircle}
-                  height={630 / 5}
-                  width={683 / 5}
-                  alt="Bitcoin is infinitely divisible."
-                />
+        <motion.div
+          exit={{ opacity: 0 }}
+          initial="initial"
+          animate="animate"
+          className={styles.mainStage}
+        >
+          <motion.div variants={fadeInUp} className={`${styles.header} ${utilStyles.textCenter}`}>
+            {home && (
+              <>
+                <div onClick={togglePlay}>
+                  <Image
+                    priority
+                    src="/btclogo.png"
+                    className={utilStyles.borderCircle}
+                    height={630 / 5}
+                    width={683 / 5}
+                    alt="Bitcoin is infinitely divisible."
+                  />
+                </div>
+                <h3 className={utilStyles.heading2Xl}>{name}</h3>
+              </>
+            )}
+            {genericHeroImg && (
+              <div className={styles.scaledImage}>
+                <Link href="/">
+                  <a>
+                    <Image
+                      priority
+                      src="/astronaut.png"
+                      height={764 / 4}
+                      width={771 / 4}
+                      alt="Bitcoin Astronaut hero image"
+                    />
+                  </a>
+                </Link>
               </div>
-              <h3 className={utilStyles.heading2Xl}>{name}</h3>
-            </>
-          )}
-          {genericHeroImg && (
-            <div className={styles.scaledImage}>
+            )}
+          </motion.div>
+          <main className={styles.mainStage}>
+            {/* this is where all your child components get inserted */}
+            {children}
+            {!home && homeButton && (
               <Link href="/">
-                <Image
-                  priority
-                  src="/astronaut.png"
-                  height={764 / 4}
-                  width={771 / 4}
-                  alt="Bitcoin Astronaut hero image"
-                />
+                <a>
+                  <div className={`${styles.backHomeButton}`}>
+                    <Image priority src={"/icons/arrowleft.svg"} height={36} width={36} alt="" />
+                    <Image priority src="/icons/home.svg" alt="" height={36} width={36} />
+                  </div>
+                </a>
               </Link>
-            </div>
-          )}
-        </header>
-        <main className={styles.mainStage}>
-          {/* this is where all your child components get inserted */}
-          {children}
-          {!home && homeButton && (
-            <Link href="/">
-              <div className={`${styles.backHomeButton}`}>
+            )}
+            {backButton && (
+              <div className={`${styles.back}`} onClick={() => router.back()}>
                 <Image
                   priority
-                  src={"/icons/arrowleft.svg"}
+                  src="/icons/arrowleft.svg"
                   height={36}
                   width={36}
-                  alt="Back home (left arrow)"
-                />
-                <Image
-                  priority
-                  src="/icons/home.svg"
-                  alt="Back home (home icon)"
-                  height={36}
-                  width={36}
+                  alt="Back to previous page"
+                  style={{ objectFit: "contain" }}
                 />
               </div>
-            </Link>
-          )}
-          {backButton && (
-            <div className={`${styles.back}`} onClick={() => router.back()}>
-              <Image
-                priority
-                src="/icons/arrowleft.svg"
-                height={36}
-                width={36}
-                alt="Back to previous page"
-              />
-            </div>
-          )}
-        </main>
+            )}
+          </main>
+        </motion.div>
         <Footer />
       </div>
     </>

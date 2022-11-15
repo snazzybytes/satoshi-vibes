@@ -1,12 +1,15 @@
 import type { AppProps } from "next/app"
 import { Analytics } from "@vercel/analytics/react"
+import { AnimatePresence } from "framer-motion"
 import "@/styles/global.css"
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <>
-      <Component {...pageProps} />
-      <Analytics />
+      <>
+    <AnimatePresence exitBeforeEnter>
+      <Component {...pageProps} key={router.route} />
+    </AnimatePresence>
+    <Analytics />
     </>
   )
 }
