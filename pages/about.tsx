@@ -45,7 +45,10 @@ const About = () => {
           ready to step inside the mind of Satoshi once they truly realize that something is wrong
           with the fiat world we live in 💸🪦. The least I could do is pay homage to Bitcoin and
           spread its ethos out into the universe (inspired by{" "}
-          <Link href="https://nakamotoinstitute.org/">NakamototInstitute.org</Link>).
+          <a href="https://nakamotoinstitute.org/" target="_blank">
+            NakamototInstitute.org
+          </a>
+          ).
         </p>
         <p>
           <h3 className={utilStyles.headingLg}>Contribute</h3>
@@ -58,7 +61,10 @@ const About = () => {
           <a href="https://github.com/snazzybytes/satoshi-vibes" target="_blank">
             put up a PR
           </a>
-          &nbsp;🚀.
+          &nbsp;🚀. Or contact me on telegram{" "}
+          <a href="https://t.me/lukeonchain" target="_blank">
+            @Lukeonchain
+          </a>
         </p>
       </div>
     </Layout>

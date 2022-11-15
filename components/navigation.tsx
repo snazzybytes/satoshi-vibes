@@ -21,6 +21,12 @@ const data = [
     image: "/icons/qrcode.svg",
     target: "_blank",
   },
+  {
+    name: "Contact",
+    url: "https://t.me/lukeonchain/",
+    image: "/icons/contact.svg",
+    target: "_blank",
+  },
 ]
 
 const Navigation = () => {
