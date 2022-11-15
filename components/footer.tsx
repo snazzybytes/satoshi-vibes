@@ -19,7 +19,12 @@ const Footer = () => {
         <a href="https://github.com/snazzybytes/satoshi-vibes" target="_blank">
           <Image priority src="/icons/code.svg" height={36} width={36} alt="Code tag icon" />
         </a>
-        <p>Made with ❤️ by LukeOnchain</p>
+        <p>
+          Made with ❤️ by{" "}
+          <a href="https://twitter.com/lukeonchain_" target="_blank">
+            LukeOnchain
+          </a>
+        </p>
       </>
     </footer>
   )

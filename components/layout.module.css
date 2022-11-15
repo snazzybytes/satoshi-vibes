@@ -40,7 +40,8 @@
   transition: transform 0.125s; /* Animation */
 }
 
-.back:hover {
+.back:hover,
+.back:active {
   transform: scale(1.3);
 }
 
@@ -57,7 +58,8 @@
   transition: transform 0.125s; /* Animation */
 }
 
-.backHomeButton:hover {
+.backHomeButton:hover,
+.backHomeButton:active {
   transform: scale(1.2);
 }
 
@@ -65,7 +67,8 @@
   z-index: 0;
 }
 
-.scaledImage:hover {
+.scaledImage:hover,
+.scaledImage:active {
   z-index: 1;
 }
 
@@ -76,7 +79,8 @@
 }
 
 /* needed for crisp (not blurry) img hover scale effect */
-.scaledImage img:hover {
+.scaledImage img:hover,
+.scaledImage img:active {
   /* Animation */
   transform: scale(1.2);
   transition: all 0.125s ease-in-out;

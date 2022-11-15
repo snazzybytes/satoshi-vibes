@@ -111,13 +111,10 @@
   padding: 0;
 }
 
-@media (hover) {
-  /* use only on hover enabled devices i.e desktop */
-  .activeNavigationMenu li:hover,
-  .navigationMenu li:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
+.activeNavigationMenu li:hover,
+.navigationMenu li:hover,
+.activeNavigationMenu li:focus,
+.navigationMenu li:focus,
 .activeNavigationMenu li:active,
 .navigationMenu li:active {
   background-color: rgba(0, 0, 0, 0.5);
