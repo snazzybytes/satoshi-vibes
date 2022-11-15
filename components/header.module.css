@@ -118,6 +118,10 @@
 .activeNavigationMenu li:active,
 .navigationMenu li:active {
   background-color: rgba(0, 0, 0, 0.5);
+  transition-delay: 100ms;
+  -webkit-transition: background-color 125ms linear;
+  -ms-transition: background-color 125ms linear;
+  transition: background-color 125ms linear;
 }
 
 .activeNavigationMenu,
