@@ -21,25 +21,6 @@ type Props = {
   backButton?: boolean
   children: React.ReactNode
 }
-// animate: defines animation.
-// initial: defines initial state of animation
-// exit: defines animation for when component exits
-const easing = [0.6, -0.05, 0.01, 0.99]
-
-const fadeInUp = {
-  initial: {
-    y: 60,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-}
 
 const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Props) => {
   const router = useRouter()
@@ -56,6 +37,9 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
     playing ? audio?.play() : audio?.pause()
   }, [playing])
 
+  // animate: defines animation.
+  // initial: defines initial state of animation
+  // exit: defines animation for when component exits
   const easing = [0.6, -0.05, 0.01, 0.99]
 
   const fadeInDown = {
@@ -82,7 +66,7 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.4,
+        duration: 0.6,
         ease: easing,
       },
     },
@@ -90,7 +74,7 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} key="layoutContainer">
         <Head>
           <link rel="icon" type="image/svg" href="/icons/btcfavicon.svg" />
           <meta
@@ -109,14 +93,17 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
         <Header />
         <motion.div
           exit={{ opacity: 0 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          // initial={{ opacity: 0 }}
+          // animate={{ opacity: 1 }}
+          // transition={{ duration: 1 }}
+          initial="initial"
+          animate="animate"
           // className={styles.mainStage}
         >
           <motion.div variants={fadeInDown} className={`${styles.header} ${utilStyles.textCenter}`}>
             {home && (
               <>
-                <div onClick={togglePlay}>
+                <div onClick={togglePlay} key="headerLogo">
                   <Image
                     priority
                     src="/btclogo.png"
@@ -130,7 +117,7 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
               </>
             )}
             {genericHeroImg && (
-              <div className={styles.scaledImage}>
+              <div className={styles.scaledImage} key="headerHero">
                 <Link href="/">
                   <a>
                     <Image
