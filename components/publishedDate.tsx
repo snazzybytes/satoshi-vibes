@@ -1,4 +1,4 @@
-import Image from "next/future/image"
+import Image from "next/image"
 import { format, parse } from "date-fns"
 import utilStyles from "@/styles/utils.module.css"
 type Props = {

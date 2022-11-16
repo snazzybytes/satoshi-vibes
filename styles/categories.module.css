@@ -27,25 +27,21 @@
 /* row of down-arrows */
 .caretContainter {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* div container for next/image */
 .imageContainer {
   margin: 0.3rem;
   text-align: center;
-}
-
-/* required for next/image due to inner span */
-.imageContainer span {
-  margin: 2rem;
-  width: 100%;
-  text-align: center;
+  object-fit: contain;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 /* pulse effect for caret arrows */
 .blob {
-  /* margin: 10px; */
   background: rgb(210, 210, 210, 0.25);
   border-radius: 50%;
 
@@ -53,6 +49,7 @@
   box-shadow: 0 0 0 0 rgb(255, 255, 255);
   animation: pulse-white 2s infinite;
   transition: background-color 7000ms linear;
+  object-fit: contain;
 }
 
 @keyframes pulse-white {
@@ -74,11 +71,13 @@
 
 .categoriesContainer {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   /* over hides the Quote panel header from
     overflowing into the rounded-corners */
   overflow: hidden;
+  justify-content: space-around;
 }
 
 .categoryItem {

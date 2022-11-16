@@ -1,9 +1,8 @@
 import Layout from "@/components/layout"
 import Head from "next/head"
 import Link from "next/link"
-import Image from "next/future/image"
+import Image from "next/image"
 import { GetStaticProps, GetStaticPaths } from "next"
-import { useRouter } from "next/router"
 import { QuoteData } from "@/interfaces/quotedata"
 import { getAllQuoteIds, getQuoteData } from "@/lib/quotes"
 import PublishedDate from "@/components/publishedDate"
@@ -16,7 +15,6 @@ type Props = {
 
 // getStaticProps() makes 'quoteData' accessible via props
 export default function Quote({ quoteData }: Props) {
-  const router = useRouter()
   const categories: string[] = quoteData.category.split(",").map(element => element.trim())
   return (
     <Layout genericHeroImg backButton>
@@ -43,13 +41,13 @@ export default function Quote({ quoteData }: Props) {
             alt="Category tag icon"
             height={24}
             width={24}
-            style={{ objectFit: "contain" }}
+            // style={{ objectFit: "contain" }}
           />
           category:&nbsp;
           {categories.map((cat, index) => (
             <div key={cat + index} className={styles.quoteTag}>
               <Link href={`/categories/${cat}`} key={index}>
-                <a>{" " + cat}</a>
+                {" " + cat}
               </Link>
               {/* append comma except for last one */}
               {index < categories.length - 1 && ","}
@@ -62,7 +60,7 @@ export default function Quote({ quoteData }: Props) {
               alt="Source tag icon"
               height={24}
               width={24}
-              style={{ objectFit: "contain" }}
+              // style={{ objectFit: "contain" }}
             />
             source:
             {" " + quoteData.medium}
