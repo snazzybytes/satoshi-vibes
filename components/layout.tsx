@@ -120,15 +120,13 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
               {genericHeroImg && (
                 <div className={styles.scaledImage} key="headerHero">
                   <Link href="/">
-                    <a>
-                      <Image
-                        priority
-                        src="/astronaut.png"
-                        height={764 / 4}
-                        width={771 / 4}
-                        alt="Bitcoin Astronaut hero image"
-                      />
-                    </a>
+                    <Image
+                      priority
+                      src="/astronaut.png"
+                      height={764 / 4}
+                      width={771 / 4}
+                      alt="Bitcoin Astronaut hero image"
+                    />
                   </Link>
                 </div>
               )}
@@ -140,12 +138,10 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
               {children}
               {!home && homeButton && (
                 <Link href="/">
-                  <a>
-                    <div className={`${styles.backHomeButton}`}>
-                      <Image priority src={"/icons/arrowleft.svg"} height={36} width={36} alt="" />
-                      <Image priority src="/icons/home.svg" alt="" height={36} width={36} />
-                    </div>
-                  </a>
+                  <div className={`${styles.backHomeButton}`}>
+                    <Image priority src={"/icons/arrowleft.svg"} height={36} width={36} alt="" />
+                    <Image priority src="/icons/home.svg" alt="" height={36} width={36} />
+                  </div>
                 </Link>
               )}
               {backButton && (
