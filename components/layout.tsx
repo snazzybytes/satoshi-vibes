@@ -100,37 +100,39 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
           animate="animate"
           // className={styles.mainStage}
         >
-          <motion.div variants={fadeInDown} className={`${styles.header} ${utilStyles.textCenter}`}>
-            {home && (
-              <>
-                <div onClick={togglePlay} key="headerLogo">
-                  <Image
-                    priority
-                    src="/btclogo.png"
-                    className={utilStyles.borderCircle}
-                    height={630 / 5}
-                    width={683 / 5}
-                    alt="Bitcoin is infinitely divisible."
-                  />
-                </div>
-                <h3 className={utilStyles.heading2Xl}>{name}</h3>
-              </>
-            )}
-            {genericHeroImg && (
-              <div className={styles.scaledImage} key="headerHero">
-                <Link href="/">
-                  <a>
+          <motion.div variants={fadeInDown}>
+            <div className={`${styles.header} ${utilStyles.textCenter}`}>
+              {home && (
+                <>
+                  <div onClick={togglePlay} key="headerLogo">
                     <Image
                       priority
-                      src="/astronaut.png"
-                      height={764 / 4}
-                      width={771 / 4}
-                      alt="Bitcoin Astronaut hero image"
+                      src="/btclogo.png"
+                      className={utilStyles.borderCircle}
+                      height={630 / 5}
+                      width={683 / 5}
+                      alt="Bitcoin is infinitely divisible."
                     />
-                  </a>
-                </Link>
-              </div>
-            )}
+                  </div>
+                  <h3 className={utilStyles.heading2Xl}>{name}</h3>
+                </>
+              )}
+              {genericHeroImg && (
+                <div className={styles.scaledImage} key="headerHero">
+                  <Link href="/">
+                    <a>
+                      <Image
+                        priority
+                        src="/astronaut.png"
+                        height={764 / 4}
+                        width={771 / 4}
+                        alt="Bitcoin Astronaut hero image"
+                      />
+                    </a>
+                  </Link>
+                </div>
+              )}
+            </div>
           </motion.div>
           <motion.div variants={fadeInUp}>
             <main className={styles.mainStage}>
