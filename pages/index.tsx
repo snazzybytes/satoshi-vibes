@@ -34,7 +34,6 @@ export default function Categories({ allCategories }: Props) {
             height={24}
             width={24}
             alt=""
-            objectFit="contain"
           />
         </div>
         <div className={styles.imageContainer}>
@@ -45,17 +44,18 @@ export default function Categories({ allCategories }: Props) {
             height={24}
             width={24}
             alt=""
-            objectFit="contain"
           />
         </div>
       </div>
       <div className={`${styles.categoryPanel} ${utilStyles.boxShadow}`}>
         <div className={`${styles.categoriesContainer}`}>
           {allCategories.map(({ name, slug }, index) => (
-            <Link href={`/categories/${slug}`} key={index}>
-              <div className={`${styles.categoryItem} ${styles.headingMd}`} key={index}>
-                {name}
-              </div>
+            <Link
+              className={`${styles.categoryItem} ${styles.headingMd}`}
+              href={`/categories/${slug}`}
+              key={index}
+            >
+              {name}
             </Link>
           ))}
         </div>

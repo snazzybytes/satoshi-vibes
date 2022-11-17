@@ -27,25 +27,21 @@
 /* row of down-arrows */
 .caretContainter {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* div container for next/image */
 .imageContainer {
   margin: 0.3rem;
   text-align: center;
-}
-
-/* required for next/image due to inner span */
-.imageContainer span {
-  margin: 2rem;
-  width: 100%;
-  text-align: center;
+  object-fit: contain;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 /* pulse effect for caret arrows */
 .blob {
-  /* margin: 10px; */
   background: rgb(210, 210, 210, 0.25);
   border-radius: 50%;
 
@@ -53,6 +49,7 @@
   box-shadow: 0 0 0 0 rgb(255, 255, 255);
   animation: pulse-white 2s infinite;
   transition: background-color 7000ms linear;
+  object-fit: contain;
 }
 
 @keyframes pulse-white {
@@ -74,11 +71,14 @@
 
 .categoriesContainer {
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   /* over hides the Quote panel header from
     overflowing into the rounded-corners */
   overflow: hidden;
+  justify-content: space-around;
+  text-decoration: none;
 }
 
 .categoryItem {
@@ -87,24 +87,22 @@
   height: 100px;
   width: 100%;
   padding: 0rem 0.2rem;
-  -ms-flex: auto;
   box-sizing: border-box;
-  flex: auto;
   align-items: center;
   text-align: center;
   justify-content: center;
 }
 
 .categoryItem:hover,
-.categoryItem:focus,
 .categoryItem:active {
   background-color: #f68819;
   cursor: pointer;
+  text-decoration: none;
   box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.2s ease-out;
-  -webkit-transition: background-color 125ms linear;
-  -ms-transition: background-color 125ms linear;
-  transition: background-color 125ms linear;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
 }
 
 @media only screen and (min-width: 1200px) {

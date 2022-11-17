@@ -1,7 +1,7 @@
 import utilStyles from "@/styles/utils.module.css"
 import styles from "@/styles/404.module.css"
 import Layout from "@/components/layout"
-import Image from "next/future/image"
+import Image from "next/image"
 
 const Custom404 = () => {
   return (

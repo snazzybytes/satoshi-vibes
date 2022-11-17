@@ -3,7 +3,7 @@ import HamburgerMenu from "./hamburger"
 import PricePanel from "./pricepanel"
 import React, { useState } from "react"
 import Link from "next/link"
-import Image from "next/future/image"
+import Image from "next/image"
 
 const data = [
   // internal pages use link, external pages use url
@@ -62,7 +62,7 @@ const Navigation = () => {
                     {item.image && (
                       <Image priority src={item.image} alt="" height={36} width={36} />
                     )}
-                    <a>{item.name}</a>
+                    {item.name}
                   </div>
                 </Link>
               )}

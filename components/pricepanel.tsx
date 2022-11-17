@@ -1,5 +1,5 @@
 import useSWR from "swr"
-import Image from "next/future/image"
+import Image from "next/image"
 import { CoinbaseResp } from "@/interfaces/pricedata"
 import styles from "./header.module.css"
 

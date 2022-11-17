@@ -1,5 +1,4 @@
-import Image from "next/future/image"
-import Link from "next/link"
+import Image from "next/image"
 import styles from "./footer.module.css"
 
 const Footer = () => {

@@ -25,10 +25,11 @@ export default function Category({ quoteCategoryItems }: Props) {
           <ul className={utilStyles.list}>
             {quoteCategoryItems.quoteData.map(({ id, title, date, content, category, medium }) => (
               <li className={`${utilStyles.listItem}`} key={id}>
-                <Link href={`/quotes/${id}`}>
-                  <a className={`${utilStyles.truncate} ${utilStyles.breakWithHyphens}`}>
-                    {content}
-                  </a>
+                <Link
+                  href={`/quotes/${id}`}
+                  className={`${utilStyles.truncate} ${utilStyles.breakWithHyphens}`}
+                >
+                  {content}
                 </Link>
                 <PublishedDate dateStr={date} />
               </li>
