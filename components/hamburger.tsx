@@ -16,7 +16,6 @@ const HamburgerIcon = () => (
     height={36}
     width={36}
     alt="Hamburger Menu"
-    // style={{ objectFit: "contain" }}
   />
 )
 export default HamburgerMenu

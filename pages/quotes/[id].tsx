@@ -35,14 +35,7 @@ export default function Quote({ quoteData }: Props) {
           dangerouslySetInnerHTML={{ __html: quoteData.contentHtml }}
         />
         <div className={`${styles.quoteTags} ${utilStyles.lightText}`}>
-          <Image
-            priority
-            src={"/icons/tag.svg"}
-            alt="Category tag icon"
-            height={24}
-            width={24}
-            // style={{ objectFit: "contain" }}
-          />
+          <Image priority src={"/icons/tag.svg"} alt="Category tag icon" height={24} width={24} />
           category:&nbsp;
           {categories.map((cat, index) => (
             <div key={cat + index} className={styles.quoteTag}>
@@ -54,14 +47,7 @@ export default function Quote({ quoteData }: Props) {
             </div>
           ))}{" "}
           <div className={styles.quoteTag}>
-            <Image
-              priority
-              src={"/icons/tag.svg"}
-              alt="Source tag icon"
-              height={24}
-              width={24}
-              // style={{ objectFit: "contain" }}
-            />
+            <Image priority src={"/icons/tag.svg"} alt="Source tag icon" height={24} width={24} />
             source:
             {" " + quoteData.medium}
           </div>
