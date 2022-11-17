@@ -49,6 +49,27 @@
   right: 0.5rem;
   /* this hides the hamburger from being displayed */
   /* display: none; */
+  /* -webkit-tap-highlight-color: rgb(245, 135, 25, 0.7) !important; */
+  -webkit-tap-highlight-color: transparent !important;
+  outline-color: #f68819;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.hamburgerOpen {
+  background-color: #f68819;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  margin: 0 0.5rem;
+  /* positions the icon to the right and center aligns it vertically */
+  position: relative;
+  top: 0px;
+  right: 0.5rem;
+  -webkit-tap-highlight-color: transparent !important;
+  outline-color: #f68819;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 /* common for active/inactive navigation */

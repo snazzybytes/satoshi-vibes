@@ -23,7 +23,7 @@ export default function Quote({ quoteData }: Props) {
       </Head>
       <div className={`${styles.article} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}>
         <h2
-          className={`${utilStyles.headingLg}  ${utilStyles.truncateTitle} ${utilStyles.textCenter} ${utilStyles.breakWithHyphens}`}
+          className={`${utilStyles.headingLg}  ${utilStyles.truncateTitle} ${utilStyles.textCenter} `}
         >
           {quoteData.title}
         </h2>

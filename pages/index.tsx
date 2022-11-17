@@ -7,7 +7,6 @@ import { getAllQuoteCategories } from "@/lib/quotes"
 import Layout, { siteTitle } from "@/components/layout"
 import utilStyles from "@/styles/utils.module.css"
 import styles from "@/styles/categories.module.css"
-import React, { TouchEvent, TouchEventHandler } from "react"
 
 export default function Categories({ allCategories }: Props) {
   return (
@@ -55,7 +54,6 @@ export default function Categories({ allCategories }: Props) {
               className={`${styles.categoryItem} ${styles.headingMd}`}
               href={`/categories/${slug}`}
               key={index}
-              onTouchStart={void 0}
             >
               {name}
             </Link>
