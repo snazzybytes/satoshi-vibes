@@ -17,6 +17,8 @@ body {
 a {
   color: #fff;
   text-decoration: none;
+  /* turn off the blue flashing outline on mobile devices when tapping */
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 @media (hover) {

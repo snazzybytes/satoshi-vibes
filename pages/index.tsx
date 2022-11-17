@@ -10,11 +10,6 @@ import styles from "@/styles/categories.module.css"
 import React, { TouchEvent, TouchEventHandler } from "react"
 
 export default function Categories({ allCategories }: Props) {
-  const handleTouchEvent: TouchEventHandler = (e: TouchEvent<HTMLButtonElement>) => {
-    e.preventDefault()
-    // Do something
-  }
-
   return (
     <Layout home>
       <Head>

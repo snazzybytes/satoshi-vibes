@@ -78,7 +78,6 @@
     overflowing into the rounded-corners */
   overflow: hidden;
   justify-content: space-around;
-  text-decoration: none;
 }
 
 .categoryItem {
@@ -93,19 +92,23 @@
   justify-content: center;
 }
 
-.categoryItem:hover {
-  background-color: #f68819;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
-  transition: box-shadow 0.2s ease-out;
-  -webkit-transition: background-color 150ms linear;
-  -ms-transition: background-color 150ms linear;
-  transition: background-color 150ms linear;
+@media (hover: hover) {
+  .categoryItem:hover {
+    background-color: #f68819;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.2s ease-out;
+    -webkit-transition: background-color 150ms linear;
+    -ms-transition: background-color 150ms linear;
+    transition: background-color 150ms linear;
+  }
 }
 
 .categoryItem:focus,
 .categoryItem:active {
+  text-decoration: none;
+  color: white;
   cursor: pointer;
   box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
   background-color: #f68819;
