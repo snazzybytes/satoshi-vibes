@@ -102,6 +102,14 @@ quote tags (keep it only in the quote .article) */
   align-items: center;
 }
 
+.quoteTag a {
+  text-decoration: underline;
+}
+
+.quoteTag a:hover {
+  color: #8595ae;
+}
+
 /* print an empty space after category string */
 .quoteTag::after {
   content: "\00a0";

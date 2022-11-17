@@ -43,7 +43,10 @@ const Navigation = () => {
       {/* price on top left, menu top right */}
       <div className={styles.headerContainer}>
         <PricePanel />
-        <div className={styles.hamburger} onClick={toggleHamburger}>
+        <div
+          className={hamburgerOpen ? styles.hamburgerOpen : styles.hamburger}
+          onClick={toggleHamburger}
+        >
           <HamburgerMenu />
         </div>
       </div>

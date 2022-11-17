@@ -17,6 +17,8 @@ body {
 a {
   color: #fff;
   text-decoration: none;
+  /* turn off the blue flashing outline on mobile devices when tapping */
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 @media (hover) {
@@ -28,4 +30,15 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* turn off all <button> styling */
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
