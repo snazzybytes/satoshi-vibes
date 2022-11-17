@@ -37,7 +37,7 @@
 .back {
   height: 36;
   cursor: pointer;
-  transition: transform 0.125s; /* Animation */
+  transition: transform 0.1s; /* Animation */
 }
 
 .back:hover,
@@ -55,7 +55,7 @@
   color: white;
   margin: 1rem 0rem;
   font-size: 24px;
-  transition: transform 0.125s; /* Animation */
+  transition: transform 0.1s; /* Animation */
 }
 
 .backHomeButton:hover,
@@ -75,7 +75,7 @@
 .scaledImage img {
   /* Animation */
   transform: scale(1);
-  transition: all 0.125s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 /* needed for crisp (not blurry) img hover scale effect */
@@ -83,5 +83,5 @@
 .scaledImage img:active {
   /* Animation */
   transform: scale(1.2);
-  transition: all 0.125s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
