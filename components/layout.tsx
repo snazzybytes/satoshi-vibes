@@ -8,7 +8,8 @@ import Footer from "./footer"
 import styles from "./layout.module.css"
 import utilStyles from "@/styles/utils.module.css"
 
-export const siteTitle = "🍊💊 ₿ Fix the money, fix the world!"
+//🍊💊 ₿ Fix the money, fix the world!"
+export const siteTitle = "🍊💊 Satoshi Nakamoto Quotes Wiki"
 const name = "Satoshi Vibes"
 const audio_file = "/sounds/nosecondbest.mpeg"
 
@@ -41,16 +42,15 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
         <Head>
           <link rel="icon" type="image/svg" href="/icons/btcfavicon.svg" />
           <meta
-            name="Satoshi Nakamoto's Quotes"
-            content="Read quotes from Satoshi Nakomoto about Bitcoin."
-          />
-          <meta
-            property="og:image"
-            content={`https://og-image.vercel.app/${encodeURI(
-              siteTitle
-            )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+            name="description"
+            content="Get inspired! Read quotes about Bitcoin by the creator Satoshi Nakomoto. HODLujah🚀"
           />
           <meta name="og:title" content={siteTitle} />
+          <meta
+            property="og:description"
+            content="Get inspired! Read quotes about Bitcoin by the creator Satoshi Nakomoto. HODLujah🚀"
+          />
+          <meta property="og:image" content="https://www.satoshivibes.com/preview.png" />
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
 

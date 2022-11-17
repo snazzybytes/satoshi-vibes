@@ -49,9 +49,7 @@
   right: 0.5rem;
   /* this hides the hamburger from being displayed */
   /* display: none; */
-  /* -webkit-tap-highlight-color: rgb(245, 135, 25, 0.7) !important; */
   -webkit-tap-highlight-color: transparent !important;
-  outline-color: #f68819;
   border-radius: 50%;
   overflow: hidden;
 }
