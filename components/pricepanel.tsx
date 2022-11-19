@@ -26,12 +26,22 @@ const SATS_PER_BTC = 100000000 // 100 million satoshis per bitcoin (sats-per-usd
 const REFRESH_INTERVAL_MILLIS = 60000
 
 const PricePanel = () => {
-  const { data, error } = useSWR<CoinbaseResp, ErrorSubclass>(
+  //  btc price fetcher
+  const { data: coinbaseData, error: error } = useSWR<CoinbaseResp, ErrorSubclass>(
     "https://api.coinbase.com/v2/prices/spot?currency=USD",
     fetcher,
     {
       refreshInterval: REFRESH_INTERVAL_MILLIS,
       revalidateOnFocus: false, // disable to prevent repeated coinbase api calls
+    }
+  )
+  //  mempool.space block height tip fetcher
+  const { data: mempoolData, error: mempoolerror } = useSWR(
+    "https://mempool.space/api/blocks/tip/height",
+    fetcher,
+    {
+      refreshInterval: REFRESH_INTERVAL_MILLIS,
+      revalidateOnFocus: false,
     }
   )
 
@@ -43,7 +53,7 @@ const PricePanel = () => {
       </div>
     )
   }
-  if (!data) {
+  if (!coinbaseData) {
     return (
       <div className={styles.pricePanel}>
         <p>Loading...</p>
@@ -55,10 +65,13 @@ const PricePanel = () => {
     <div className={styles.pricePanel}>
       {/* btc price */}
       <Image priority src={"/icons/btccircle.svg"} alt="Bitcoin icon" height={28} width={28} />
-      <p>${Number(data.data.amount).toFixed(0)}</p>
+      <p>${Number(coinbaseData.data.amount).toFixed(0)}</p>
       {/* sats per fiat */}
       <Image priority src={"/icons/sats.svg"} alt="Satoshi v2 icon" height={28} width={28} />{" "}
-      {Number(SATS_PER_BTC / Number(data.data.amount)).toFixed(0)}/$
+      <p>{Number(SATS_PER_BTC / Number(coinbaseData.data.amount)).toFixed(0)}/$</p>
+      {/* block height (tip) */}
+      <Image priority src={"/icons/block.svg"} alt="Block icon" height={28} width={28} />{" "}
+      <p>{mempoolData}</p>
     </div>
   )
 }
