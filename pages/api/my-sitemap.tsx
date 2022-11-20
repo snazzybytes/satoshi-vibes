@@ -10,16 +10,8 @@ type SitemapUrls = {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  // individual quote links
   const links: SitemapUrls[] = []
-  getAllQuoteIds().map(quote => {
-    links.push({
-      url: `/quotes/${quote.params.id}`,
-      changefreq: "daily",
-      priority: 0.9,
-    })
-  })
-  // individual category links
+  //  dynamic pages - quote categories
   getAllQuoteCategories().map(cat => {
     links.push({
       url: `/categories/${cat.slug}`,
@@ -27,7 +19,15 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       priority: 0.9,
     })
   })
-  // other pages
+  //  dynamic pages - Satoshi quotes
+  getAllQuoteIds().map(quote => {
+    links.push({
+      url: `/quotes/${quote.params.id}`,
+      changefreq: "daily",
+      priority: 0.9,
+    })
+  })
+  //  static pages
   const pages = ["/", "/about"]
   pages.map(url => {
     links.push({
@@ -36,15 +36,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       priority: 0.9,
     })
   })
-
-  //  stream to write
+  //  stream to write xml string
   const stream = new SitemapStream({ hostname: `https://${req.headers.host}` })
-
   res.writeHead(200, { "Content-type": "application/xml" })
-
   const xmlString = await streamToPromise(Readable.from(links).pipe(stream)).then(data =>
     data.toString()
   )
-
   res.end(xmlString)
 }
