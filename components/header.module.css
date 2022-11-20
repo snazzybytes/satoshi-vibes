@@ -21,15 +21,16 @@
 
 /* bitcoin price info panel */
 .pricePanel {
-  margin-left: 0rem;
+  margin-left: 0.5rem;
   /* 'auto' will push the price panel to left corner inside headerContainer */
   margin-right: auto;
+
   display: flex;
   align-items: center;
 }
 
-.pricePanel img {
-  margin-left: 0.2rem;
+.pricePanel p {
+  margin-right: 0.5rem;
 }
 
 /* container for hamburger menu to

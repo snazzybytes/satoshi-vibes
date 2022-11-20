@@ -2,7 +2,7 @@
 // usage: import { QuoteData } from 'path/to/interfaces';
 
 /**
- * Type used throughout pages in getStaticProps/getStaticPaths
+ * Types used throughout pages in getStaticProps/getStaticPaths
  */
 export type QuoteData = {
   id: string
