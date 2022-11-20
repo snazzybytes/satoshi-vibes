@@ -1,8 +1,14 @@
 import type { AppProps } from "next/app"
+import { Analytics } from "@vercel/analytics/react"
 import "@/styles/global.css"
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  )
 }
 
 // Manually disable console.log() in production (simpler/arguably more elegant than libs)
