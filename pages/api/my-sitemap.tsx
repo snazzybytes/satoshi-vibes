@@ -1,12 +1,17 @@
 import { SitemapStream, streamToPromise } from "sitemap"
 import { Readable } from "stream"
 import { getAllQuoteIds, getAllQuoteCategories } from "@/lib/quotes"
-
 import { NextApiRequest, NextApiResponse } from "next"
+
+type SitemapUrls = {
+  url: string
+  changefreq: string
+  priority: number
+}
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // individual quote links
-  const links = []
+  const links: SitemapUrls[] = []
   getAllQuoteIds().map(quote => {
     links.push({
       url: `/quotes/${quote.params.id}`,

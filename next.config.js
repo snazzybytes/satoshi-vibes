@@ -3,6 +3,16 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  /* redirect toogle crawler to dynamically created sitemap */
+  async rewrites() {
+    return [
+      {
+        source: "/sitemap.xml",
+        destination: "/api/my-sitemap",
+      },
+    ]
+  },
+  /* favorite url redirects - custom fun names */
   async redirects() {
     return [
       {
