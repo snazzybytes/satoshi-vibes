@@ -31,25 +31,18 @@
   align-items: center;
 }
 
-/* div container for next/image */
-.imageContainer {
-  margin: 0.3rem;
-  text-align: center;
-  object-fit: contain;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
 /* pulse effect for caret arrows */
 .blob {
+  margin: 0.3rem;
   background: rgb(210, 210, 210, 0.25);
   border-radius: 50%;
 
   /* animation */
   box-shadow: 0 0 0 0 rgb(255, 255, 255);
-  animation: pulse-white 2s infinite;
-  transition: background-color 7000ms linear;
+  animation: pulse-white 1.8s infinite;
+  transition: background-color 3000ms linear;
   object-fit: contain;
+  overflow: hidden;
 }
 
 @keyframes pulse-white {
@@ -58,9 +51,9 @@
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
   }
 
-  70% {
+  50% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.6);
   }
 
   100% {

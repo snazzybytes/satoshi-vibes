@@ -3,25 +3,6 @@ import Image from "next/image"
 import { CoinbaseResp } from "@/interfaces/pricedata"
 import styles from "./header.module.css"
 
-// error handling : custom error subclass to set additional fields
-class ErrorSubclass extends Error {
-  status?: number
-  info?: any
-}
-
-const fetcher = async (url: string) => {
-  return fetch(url).then(res => {
-    if (!res.ok) {
-      const error = new ErrorSubclass("An error occurred while fetching the data.")
-      // Attach extra info to the error object .
-      // error.info = await res.json()
-      error.status = res.status
-      throw error
-    }
-    return res.json()
-  })
-}
-
 const SATS_PER_BTC = 100000000 // 100 million satoshis per bitcoin (sats-per-usd)
 const REFRESH_INTERVAL_MILLIS = 60000
 
@@ -32,7 +13,7 @@ const PricePanel = () => {
     fetcher,
     {
       refreshInterval: REFRESH_INTERVAL_MILLIS,
-      revalidateOnFocus: false, // disable to prevent repeated coinbase api calls
+      revalidateOnFocus: false, // disable repeat api calls, use interval instead
     }
   )
   //  mempool.space block height tip fetcher
@@ -41,22 +22,23 @@ const PricePanel = () => {
     fetcher,
     {
       refreshInterval: REFRESH_INTERVAL_MILLIS,
-      revalidateOnFocus: false,
+      revalidateOnFocus: false, // disable repeat api calls, use interval instead
     }
   )
-
+  //  error handling
   if (error) {
     return (
       <div className={styles.pricePanel}>
         {/* <p>{error.info.errors[0]?.message}</p> */}
-        <p>🍊💊</p>
+        <p>🍊💊 price data error...</p>
       </div>
     )
   }
-  if (!coinbaseData) {
+  //  wait until both APIs responded (coinbase + mempool)
+  if (!coinbaseData || !mempoolData) {
     return (
       <div className={styles.pricePanel}>
-        <p>Loading...</p>
+        <p>🍊💊 Loading...</p>
       </div>
     )
   }
@@ -74,6 +56,25 @@ const PricePanel = () => {
       <p>{mempoolData}</p>
     </div>
   )
+}
+
+// error handling : custom error subclass to set additional fields
+class ErrorSubclass extends Error {
+  status?: number
+  info?: any
+}
+
+const fetcher = async (url: string) => {
+  return fetch(url).then(res => {
+    if (!res.ok) {
+      const error = new ErrorSubclass("An error occurred while fetching the data.")
+      // Attach extra info to the error object .
+      // error.info = await res.json()
+      error.status = res.status
+      throw error
+    }
+    return res.json()
+  })
 }
 
 export default PricePanel
