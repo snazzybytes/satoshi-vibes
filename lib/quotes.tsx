@@ -2,7 +2,11 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { remark } from "remark"
+import { unified } from "unified"
+import rehypeRaw from "rehype-raw"
 import remarkRehype from "remark-rehype"
+import remarkParse from "remark-parse"
+import rehypeSanitize from "rehype-sanitize"
 import rehypeStringify from "rehype-stringify"
 import { getTitle } from "./contentutils"
 import { QuoteCategory, QuoteCategoryItems, QuoteData } from "@/interfaces/quotedata"
@@ -72,8 +76,11 @@ export async function getQuoteData(id: string) {
   const title = getTitle(matterResult.content)
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(remarkRehype)
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeSanitize)
     .use(rehypeStringify)
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
