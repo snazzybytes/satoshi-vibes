@@ -87,6 +87,15 @@
   display: block;
 }
 
+.article a {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.article a:hover {
+  color: #8595ae;
+}
+
 /* TURN OFF word-wrap styling for category/source
 quote tags (keep it only in the quote .article) */
 .quoteTags {
