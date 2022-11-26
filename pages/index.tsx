@@ -16,36 +16,30 @@ export default function Categories({ allCategories }: Props) {
       </Head>
       <h2 className={styles.headingLg}>choose category</h2>
       <div className={styles.caretContainter}>
-        <div className={styles.imageContainer}>
-          <Image
-            priority
-            src="/icons/caretdown.svg"
-            className={`${styles.blob}`}
-            height={24}
-            width={24}
-            alt=""
-          />
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            priority
-            src="/icons/caretdown.svg"
-            className={`${styles.blob} `}
-            height={24}
-            width={24}
-            alt=""
-          />
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            priority
-            src="/icons/caretdown.svg"
-            className={`${styles.blob}`}
-            height={24}
-            width={24}
-            alt=""
-          />
-        </div>
+        <Image
+          priority
+          src="/icons/caretdown.svg"
+          className={`${styles.blob}`}
+          height={24}
+          width={24}
+          alt=""
+        />
+        <Image
+          priority
+          src="/icons/caretdown.svg"
+          className={`${styles.blob}`}
+          height={24}
+          width={24}
+          alt=""
+        />
+        <Image
+          priority
+          src="/icons/caretdown.svg"
+          className={`${styles.blob}`}
+          height={24}
+          width={24}
+          alt=""
+        />
       </div>
       <div className={`${styles.categoryPanel} ${utilStyles.boxShadow}`}>
         <div className={`${styles.categoriesContainer}`}>
