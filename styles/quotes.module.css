@@ -33,9 +33,10 @@
 
 .article {
   background-color: #182538;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   margin: 1rem;
   max-width: calc(100% - 2rem);
+  position: relative;
 }
 
 /* smaller tablet type 800px+ */
@@ -122,4 +123,26 @@ quote tags (keep it only in the quote .article) */
 /* print an empty space after category string */
 .quoteTag::after {
   content: "\00a0";
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(-30deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(-30deg);
+  }
+}
+
+.copyButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.copyEffect {
+  animation: wiggle 200ms ease-in-out;
 }
