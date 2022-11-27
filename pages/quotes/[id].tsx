@@ -6,8 +6,11 @@ import { GetStaticProps, GetStaticPaths } from "next"
 import { QuoteData } from "@/interfaces/quotedata"
 import { getAllQuoteIds, getQuoteData } from "@/lib/quotes"
 import PublishedDate from "@/components/publishedDate"
-import utilStyles from "@/styles/utils.module.css"
 import styles from "@/styles/quotes.module.css"
+import utilStyles from "@/styles/utils.module.css"
+import { BaseSyntheticEvent, useState } from "react"
+import { useRef } from "react"
+import { stripHtmlTags } from "@/lib/contentutils"
 
 type Props = {
   quoteData: QuoteData
@@ -15,13 +18,46 @@ type Props = {
 
 // getStaticProps() makes 'quoteData' accessible via props
 export default function Quote({ quoteData }: Props) {
+  const [effect, setEffect] = useState(false)
+  const [copyStatus, setCopyStatus] = useState("")
+  const divQuoteRef = useRef(null)
+  //  split into multiple category strings
   const categories: string[] = quoteData.category.split(",").map(element => element.trim())
+
+  async function copyToClipboard(e: BaseSyntheticEvent) {
+    if (window.isSecureContext && navigator.clipboard) {
+      setEffect(true)
+      try {
+        const quoteText = divQuoteRef.current.innerHTML
+        await navigator.clipboard.writeText(
+          stripHtmlTags(quoteText + " - Satoshi Nakamoto (" + quoteData.date + ")")
+        )
+        // preference?: do not show the whole text area selected
+        // e.target.focus()
+        setCopyStatus("Copied!")
+        setTimeout(() => {
+          setEffect(false)
+          setCopyStatus("")
+        }, 1500)
+      } catch (e) {
+        console.log(e)
+        setEffect(false)
+      }
+    }
+  }
+
   return (
     <Layout genericHeroImg backButton>
       <Head>
         <title>{quoteData.title}</title>
       </Head>
       <div className={`${styles.article} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}>
+        <div className={`${styles.copyButtonWrapper}`}>
+          <div className={utilStyles.textCenter}>{copyStatus}</div>
+          <div className={`${effect && styles.copyEffect}`} onClick={copyToClipboard}>
+            <Image priority src={"/icons/copy.svg"} alt="Copy icon" height={36} width={36} />
+          </div>
+        </div>
         <h2
           className={`${utilStyles.headingLg}  ${utilStyles.truncateTitle} ${utilStyles.textCenter} `}
         >
@@ -31,6 +67,7 @@ export default function Quote({ quoteData }: Props) {
           <PublishedDate dateStr={quoteData.date} />
         </div>
         <div
+          ref={divQuoteRef}
           className={utilStyles.headingMd}
           dangerouslySetInnerHTML={{ __html: quoteData.contentHtml }}
         />

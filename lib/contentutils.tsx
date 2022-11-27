@@ -9,3 +9,7 @@ export function getTitle(contentString: string) {
     ? contentString.replace(/(<([^>]+)>)/gi, "").slice(0, TITLE_LENGTH)
     : contentString
 }
+
+export function stripHtmlTags(text: string) {
+  return text.replace(/(<([^>]+)>)/gi, "")
+}
