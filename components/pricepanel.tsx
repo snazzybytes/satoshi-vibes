@@ -1,6 +1,7 @@
 import useSWR from "swr"
 import Image from "next/image"
-import { CoinbaseResp } from "@/interfaces/pricedata"
+import { CoinbaseResp, CustomApiError } from "@/interfaces/pricedata"
+import { apifetcher } from "@/lib/apiutils"
 import styles from "./header.module.css"
 
 const SATS_PER_BTC = 100000000 // 100 million satoshis per bitcoin (sats-per-usd)
@@ -8,9 +9,9 @@ const REFRESH_INTERVAL_MILLIS = 60000
 
 const PricePanel = () => {
   //  btc price fetcher
-  const { data: coinbaseData, error: error } = useSWR<CoinbaseResp, ErrorSubclass>(
+  const { data: coinbaseData, error: error } = useSWR<CoinbaseResp, CustomApiError>(
     "https://api.coinbase.com/v2/prices/spot?currency=USD",
-    fetcher,
+    apifetcher,
     {
       refreshInterval: REFRESH_INTERVAL_MILLIS,
       revalidateOnFocus: false, // disable repeat api calls, use interval instead
@@ -19,7 +20,7 @@ const PricePanel = () => {
   //  mempool.space block height tip fetcher
   const { data: mempoolData, error: mempoolerror } = useSWR(
     "https://mempool.space/api/blocks/tip/height",
-    fetcher,
+    apifetcher,
     {
       refreshInterval: REFRESH_INTERVAL_MILLIS,
       revalidateOnFocus: false, // disable repeat api calls, use interval instead
@@ -56,25 +57,6 @@ const PricePanel = () => {
       <p>{mempoolData}</p>
     </div>
   )
-}
-
-// error handling : custom error subclass to set additional fields
-class ErrorSubclass extends Error {
-  status?: number
-  info?: any
-}
-
-const fetcher = async (url: string) => {
-  return fetch(url).then(res => {
-    if (!res.ok) {
-      const error = new ErrorSubclass("An error occurred while fetching the data.")
-      // Attach extra info to the error object .
-      // error.info = await res.json()
-      error.status = res.status
-      throw error
-    }
-    return res.json()
-  })
 }
 
 export default PricePanel

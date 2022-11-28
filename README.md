@@ -14,6 +14,7 @@ Click around to explore various categories to discover new interesting quotes fr
   - Typescript enabled
   - deployed on Vercel.com
 - uses [Coinbase Price-Data API](https://docs.cloud.coinbase.com/sign-in-with-coinbase/docs/api-prices) for the header Bitcoin price widget
+- uses [Mempool.Space API](https://mempool.space/docs/api/rest) for the height of the latest block (block height "tip")
 
 ---
 
