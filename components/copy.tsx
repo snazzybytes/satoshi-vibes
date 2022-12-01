@@ -1,11 +1,16 @@
 import Image from "next/image"
-import { useState } from "react"
+import { MutableRefObject, useState } from "react"
 import { stripHtmlTags } from "@/lib/contentutils"
 import { useEffect } from "react"
 import styles from "@/styles/quotes.module.css"
 import utilStyles from "@/styles/utils.module.css"
 
-const ClipboardCopyButton = ({ divQuoteRef, date }) => {
+type Props = {
+  divQuoteRef: MutableRefObject<HTMLDivElement>
+  date: string
+}
+
+const ClipboardCopyButton = ({ divQuoteRef, date }: Props) => {
   const [effect, setEffect] = useState(false)
   const [copyStatus, setCopyStatus] = useState("")
   const [isCopySupported, setIsCopySupported] = useState(false)
