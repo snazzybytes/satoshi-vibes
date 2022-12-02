@@ -1,12 +1,15 @@
+import Link from "next/link"
+import Head from "next/head"
+import Layout from "@/components/layout"
 import styles from "@/styles/about.module.css"
 import utilStyles from "@/styles/utils.module.css"
-import Layout from "@/components/layout"
-import Link from "next/link"
 
 const About = () => {
   return (
     <Layout homeButton genericHeroImg>
-      {/* TODO - add Head */}
+      <Head>
+        <title>About SatoshiVibes.com</title>
+      </Head>
       <>
         <div
           className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}

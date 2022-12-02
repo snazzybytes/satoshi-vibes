@@ -77,7 +77,7 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
                 <Image
                   priority
                   src="/astronaut.png"
-                  height={764 / 4}
+                  height={784 / 4}
                   width={771 / 4}
                   alt="Bitcoin Astronaut hero image"
                 />
