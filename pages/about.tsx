@@ -1,12 +1,15 @@
+import Link from "next/link"
+import Head from "next/head"
+import Layout from "@/components/layout"
 import styles from "@/styles/about.module.css"
 import utilStyles from "@/styles/utils.module.css"
-import Layout from "@/components/layout"
-import Link from "next/link"
 
 const About = () => {
   return (
     <Layout homeButton genericHeroImg>
-      {/* TODO - add Head */}
+      <Head>
+        <title>About SatoshiVibes.com</title>
+      </Head>
       <>
         <div
           className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}
@@ -30,7 +33,7 @@ const About = () => {
         <div
           className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}
         >
-          <h3 className={utilStyles.headingLg}>Pleb Movement</h3>
+          <h2 className={utilStyles.headingLg}>Pleb Movement</h2>
           <p>
             Pleb is a state of mind. Plebs come from all walks of life and form socioeconomic immune
             system that defends freedom and Bitcoin from all attacks. Don't trust verify! Stay
@@ -41,7 +44,7 @@ const About = () => {
         <div
           className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}
         >
-          <h3 className={utilStyles.headingLg}>Motivation</h3>
+          <h2 className={utilStyles.headingLg}>Motivation</h2>
           <p>
             I quickly put this site together while sitting home one weekend and exploring{" "}
             <Link href="https://nextjs.org/">NextJS</Link>. I work as a software engineer in
@@ -61,7 +64,7 @@ const About = () => {
         <div
           className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}
         >
-          <h3 className={utilStyles.headingLg}>Contribute</h3>
+          <h2 className={utilStyles.headingLg}>Contribute</h2>
           <p>
             The site is fully open source, just like everything I used to put it together (credits
             on Github). If you are a dev and want to add more pages, Bitcoin resources or learning

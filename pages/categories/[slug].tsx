@@ -16,7 +16,9 @@ export default function Category({ quoteCategoryItems }: Props) {
   return (
     <Layout genericHeroImg backButton>
       <Head>
-        <title>{siteTitle}</title>
+        <title>
+          {quoteCategoryItems.categoryName}: {siteTitle}
+        </title>
       </Head>
 
       <div className={`${styles.stagePanel} ${utilStyles.boxShadow} ${utilStyles.headingMd}`}>
