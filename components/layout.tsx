@@ -25,8 +25,8 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
   const router = useRouter()
   const [audio, setAudio] = useState(null)
   const [playing, setPlaying] = useState(false)
-  // client side: set audio inside useEffect() to avoid error (Audio type is not defined on server side)
   useEffect(() => {
+    // client side: set audio inside useEffect() to avoid error (Audio type is not defined on server side)
     if (audio == null) setAudio(new Audio(audio_file))
   }, [])
   const togglePlay = () => {

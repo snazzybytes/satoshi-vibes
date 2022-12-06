@@ -16,6 +16,7 @@ const ClipboardCopyButton = ({ divQuoteRef, date }: Props) => {
   const [isCopySupported, setIsCopySupported] = useState(false)
 
   useEffect(() => {
+    // set only once on initial render
     setIsCopySupported(window.isSecureContext && "clipboard" in navigator)
   }, [])
 
