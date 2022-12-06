@@ -15,16 +15,16 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   getAllQuoteCategories().map(cat => {
     links.push({
       url: `/categories/${cat.slug}`,
-      changefreq: "daily",
-      priority: 0.9,
+      changefreq: "monthly",
+      priority: 0.7,
     })
   })
   //  dynamic pages - Satoshi quotes
   getAllQuoteIds().map(quote => {
     links.push({
       url: `/quotes/${quote.params.id}`,
-      changefreq: "daily",
-      priority: 0.9,
+      changefreq: "monthly",
+      priority: 0.5,
     })
   })
   //  static pages
@@ -32,8 +32,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   pages.map(url => {
     links.push({
       url,
-      changefreq: "daily",
-      priority: 0.9,
+      changefreq: "monthly",
+      priority: 1.0,
     })
   })
   //  stream to write xml string
