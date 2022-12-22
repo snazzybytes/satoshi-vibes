@@ -32,4 +32,16 @@ module.exports = {
       },
     ]
   },
+  async headers() {
+    return [
+      {
+        // matching all NOSTR related routes
+        source: "/.well-known/nostr.json",
+        headers: [
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          { key: "Access-Control-Allow-Methods", value: "GET" }
+        ],
+      },
+    ]
+  },
 }
