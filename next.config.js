@@ -36,7 +36,7 @@ module.exports = {
     return [
       {
         // matching all API routes
-        source: "/.well-known/nostr.json*",
+        source: "/.well-known/nostr.json",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
