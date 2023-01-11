@@ -1,4 +1,5 @@
 {
+  "status": "OK",
   "tag": "payRequest",
   "commentAllowed": 255,
   "callback": "https://getalby.com/lnurlp/lukeonchain/callback",
