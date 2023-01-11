@@ -10,6 +10,10 @@ module.exports = {
         source: "/sitemap.xml",
         destination: "/api/my-sitemap",
       },
+      {
+        source: "/.well-known/lnurlp/lukeonchain",
+        destination: "/api/lukeonchain",
+      },
     ]
   },
   /* favorite url redirects - custom fun names */
