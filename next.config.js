@@ -3,7 +3,7 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
   },
-  /* redirect toogle crawler to dynamically created sitemap */
+  /* redirect google crawler to dynamically created sitemap */
   async rewrites() {
     return [
       {
@@ -13,7 +13,7 @@ module.exports = {
       {
         source: "/.well-known/lnurlp/lukeonchain",
         destination: "/api/lukeonchain",
-      },
+      }
     ]
   },
   /* favorite url redirects - custom fun names */
@@ -32,6 +32,11 @@ module.exports = {
       {
         source: "/view-source",
         destination: "https://github.com/snazzybytes",
+        permanent: true,
+      },
+      {
+        source: "/tipjar",
+        destination: "https://uselessshit.co/tip-jar/lukeonchain",
         permanent: true,
       },
     ]
