@@ -55,6 +55,11 @@ module.exports = {
         destination: "https://uselessshit.co/resources/nostr/",
         permanent: true,
       },
+      {
+        source: "/foldapp",
+        destination: "https://use.foldapp.com/r/LUKEONCHAIN",
+        permanent: true,
+      },
     ]
   },
   async headers() {
