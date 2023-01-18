@@ -39,6 +39,22 @@ module.exports = {
         destination: "https://uselessshit.co/tip-jar/lukeonchain",
         permanent: true,
       },
+      // plebsites
+      {
+        source: "/wtf1971",
+        destination: "https://wtfhappenedin1971.com/",
+        permanent: true,
+      },
+      {
+        source: "/usdebt",
+        destination: "https://usdebt.wtf/",
+        permanent: true,
+      },
+      {
+        source: "/nostr",
+        destination: "https://uselessshit.co/resources/nostr/",
+        permanent: true,
+      },
     ]
   },
   async headers() {
