@@ -13,12 +13,17 @@ module.exports = {
       {
         source: "/.well-known/lnurlp/lukeonchain",
         destination: "/api/lukeonchain",
-      }
+      },
     ]
   },
   /* favorite url redirects - custom fun names */
   async redirects() {
     return [
+      {
+        source: "/nostr",
+        destination: "nostr:npub138guayty78ch9k42n3uyz5ch3jcaa3u390647hwq0c83m2lypekq6wk36k",
+        permanent: true,
+      },
       {
         source: "/bitcoin",
         destination: "https://bitcoin.org/bitcoin.pdf",
