@@ -56,7 +56,7 @@ module.exports = {
         permanent: true,
       },
       {
-        source: "/nostr",
+        source: "/NostrFAQ",
         destination: "https://uselessshit.co/resources/nostr/",
         permanent: true,
       },
