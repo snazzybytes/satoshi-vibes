@@ -56,9 +56,14 @@ module.exports = {
         permanent: true,
       },
       {
-        source: "/TheNostrPack",
+        source: "/TheNostrPackSignal",
         destination:
           "https://signal.art/addstickers/#pack_id=b964fcc58f917f7e6cf09230afaf3b71&pack_key=21357a12cd0fad97a9c28e060d665303d23b656d5b362315fa32830878a7938f",
+        permanent: true,
+      },
+      {
+        source: "/TheNostrPackTelegram",
+        destination: "https://t.me/addstickers/TheNostrPack",
         permanent: true,
       },
       {
