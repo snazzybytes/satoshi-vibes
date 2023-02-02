@@ -56,6 +56,12 @@ module.exports = {
         permanent: true,
       },
       {
+        source: "/TheNostrPack",
+        destination:
+          "https://signal.art/addstickers/#pack_id=b964fcc58f917f7e6cf09230afaf3b71&pack_key=21357a12cd0fad97a9c28e060d665303d23b656d5b362315fa32830878a7938f",
+        permanent: true,
+      },
+      {
         source: "/NostrFAQ",
         destination: "https://uselessshit.co/resources/nostr/",
         permanent: true,
