@@ -19,11 +19,7 @@ module.exports = {
   /* favorite url redirects - custom fun names */
   async redirects() {
     return [
-      {
-        source: "/nostr",
-        destination: "nostr:npub138guayty78ch9k42n3uyz5ch3jcaa3u390647hwq0c83m2lypekq6wk36k",
-        permanent: true,
-      },
+      // btc+ln
       {
         source: "/bitcoin",
         destination: "https://bitcoin.org/bitcoin.pdf",
@@ -55,6 +51,12 @@ module.exports = {
         destination: "https://usdebt.wtf/",
         permanent: true,
       },
+      // Nostr protocol
+      {
+        source: "/nostr",
+        destination: "nostr:npub138guayty78ch9k42n3uyz5ch3jcaa3u390647hwq0c83m2lypekq6wk36k",
+        permanent: true,
+      },
       {
         source: "/TheNostrPackSignal",
         destination:
@@ -71,6 +73,7 @@ module.exports = {
         destination: "https://uselessshit.co/resources/nostr/",
         permanent: true,
       },
+      // referrals
       {
         source: "/foldapp",
         destination: "https://use.foldapp.com/r/LUKEONCHAIN",
