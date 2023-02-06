@@ -3,7 +3,7 @@
   "tag": "payRequest",
   "commentAllowed": 255,
   "callback": "https://getalby.com/lnurlp/lukeonchain/callback",
-  "metadata": "[[\"text/identifier\", \"lukeonchain@getalby.com\"], [\"text/plain\", \"sats for lukeonchain\"]]",
+  "metadata": "[[\"text/identifier\",\"lukeonchain@getalby.com\"],[\"text/plain\",\"Sats for LukeOnchain\"]]",
   "minSendable": 1000,
   "maxSendable": 11000000000,
   "payerData": { "name": { "mandatory": false }, "email": { "mandatory": false } }
