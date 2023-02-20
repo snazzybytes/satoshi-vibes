@@ -1,0 +1,9 @@
+{
+  "callback": "https://stacker.news/api/lnurlp/lukeonchain/pay",
+  "minSendable": 1000,
+  "maxSendable": 1000000000,
+  "metadata": "[[\"text/plain\",\"Funding @lukeonchain on stacker.news\"],[\"text/identifier\",\"lukeonchain@stacker.news\"]]",
+  "tag": "payRequest",
+  "nostrPubkey": "89d1ce9164f1f172daaa9c784153178cb1dec7912bf55f5dc07e0f1dabe40e6c",
+  "allowsNostr": true
+}

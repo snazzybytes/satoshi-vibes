@@ -1,0 +1,10 @@
+{
+  "callback": "https://livingroomofsatoshi.com/api/v1/lnurl/payreq/07b88893-95e0-449a-8bb0-4971c7941aaa",
+  "maxSendable": 100000000000,
+  "minSendable": 1000,
+  "metadata": "[[\"text/plain\",\"Sats for LukeOnChain@SatoshiVibes.com\"],[\"text/identifier\",\"rancidalcohol90@walletofsatoshi.com\"]]",
+  "commentAllowed": 32,
+  "tag": "payRequest",
+  "allowsNostr": true,
+  "nostrPubkey": "89d1ce9164f1f172daaa9c784153178cb1dec7912bf55f5dc07e0f1dabe40e6c"
+}
