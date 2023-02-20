@@ -1,0 +1,10 @@
+{
+  "callback": "https://livingroomofsatoshi.com/api/v1/lnurl/payreq/07b88893-95e0-449a-8bb0-4971c7941aaa",
+  "maxSendable": 100000000000,
+  "minSendable": 1000,
+  "metadata": "[[\"text/plain\",\"Pay to Wallet of Satoshi user: rancidalcohol90\"],[\"text/identifier\",\"rancidalcohol90@walletofsatoshi.com\"]]",
+  "commentAllowed": 32,
+  "tag": "payRequest",
+  "allowsNostr": true,
+  "nostrPubkey": "be1d89794bf92de5dd64c1e60f6a2c70c140abac9932418fee30c5c637fe9479"
+}
