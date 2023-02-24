@@ -14,6 +14,10 @@ module.exports = {
         source: "/.well-known/lnurlp/lukeonchain",
         destination: "/api/lukeonchain",
       },
+      {
+        source: "/.well-known/nostr.json",
+        destination: "/api/nip5",
+      },
     ]
   },
   /* favorite url redirects - custom fun names */
@@ -84,7 +88,7 @@ module.exports = {
   async headers() {
     return [
       {
-        // matching all NOSTR nip5 (".well-known") related routes
+        // matching all NOSTR "/.well-known" related routes (nip5/lnurlp)
         source: "/.well-known/:path*",
         headers: [
           { key: "Access-Control-Allow-Origin", value: "*" },
