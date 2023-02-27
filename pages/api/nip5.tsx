@@ -3,7 +3,6 @@ import { promises as fs } from "fs"
 import { NextApiRequest, NextApiResponse } from "next"
 
 type Nip5Id = {
-  // names: [string, string][]
   names: { username: string; hexkey: string }
 }
 
