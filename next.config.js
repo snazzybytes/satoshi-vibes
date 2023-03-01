@@ -83,6 +83,21 @@ module.exports = {
         destination: "https://use.foldapp.com/r/LUKEONCHAIN",
         permanent: true,
       },
+      {
+        source: "/proton",
+        destination: "https://pr.tn/ref/QSQS1NSA1HRG",
+        permanent: true,
+      },
+      {
+        source: "/coinkite",
+        destination: "https://store.coinkite.com/promo/63FA42CEC732C90FEC8D",
+        permanent: true,
+      },
+      {
+        source: "/coldcard",
+        destination: "https://store.coinkite.com/promo/63FA42CEC732C90FEC8D",
+        permanent: true,
+      },
     ]
   },
   async headers() {
