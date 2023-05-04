@@ -35,6 +35,11 @@ module.exports = {
         permanent: true,
       },
       {
+        source: "/bitcoin.conf",
+        destination: "https://jlopp.github.io/bitcoin-core-config-generator/",
+        permanent: true,
+      },
+      {
         source: "/view-source",
         destination: "https://github.com/snazzybytes",
         permanent: true,
