@@ -26,17 +26,33 @@ module.exports = {
       // btc+ln
       {
         source: "/bitcoin",
-        destination: "https://bitcoin.org/bitcoin.pdf",
+        destination: "/bitcoin.pdf",
         permanent: true,
       },
       {
         source: "/whitepaper",
+        destination: "/bitcoin.pdf",
+        permanent: true,
+      },
+      {
+        // additional external pdf in case file missing lol
+        source: "/whitepaper-mirror",
         destination: "https://bitcoin.org/bitcoin.pdf",
         permanent: true,
       },
       {
         source: "/bitcoin.conf",
         destination: "https://jlopp.github.io/bitcoin-core-config-generator/",
+        permanent: true,
+      },
+      {
+        source: "/cypherpunks",
+        destination: "/docs/cypherpunkmanifesto.txt",
+        permanent: true,
+      },
+      {
+        source: "/manifesto",
+        destination: "/docs/cypherpunkmanifesto.txt",
         permanent: true,
       },
       {
