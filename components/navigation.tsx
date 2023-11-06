@@ -8,12 +8,16 @@ import Image from "next/image"
 const data = [
   // internal pages use link, external pages use url
   { name: "Home", link: "/", image: "/icons/home.svg" },
-  { name: "About", link: "/about", image: "/icons/about.svg" },
   {
     name: "Bitcoin",
-    url: "https://bitcoin.org/bitcoin.pdf",
+    url: "/bitcoin",
     image: "/icons/file.svg",
     target: "_blank",
+  },
+  {
+    name: "Tor Proxy",
+    link: "/torproxy",
+    image: "/icons/snowflake.svg"
   },
   {
     name: "Tip Jar",
@@ -27,6 +31,7 @@ const data = [
     image: "/icons/contact.svg",
     target: "_blank",
   },
+  { name: "About", link: "/about", image: "/icons/about.svg" },
 ]
 
 const Navigation = () => {
