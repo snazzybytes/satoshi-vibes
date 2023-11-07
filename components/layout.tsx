@@ -43,12 +43,12 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
           <link rel="icon" type="image/svg" href="/icons/btcfavicon.svg" />
           <meta
             name="description"
-            content="Get inspired! Read quotes about Bitcoin by the creator Satoshi Nakomoto. HODLujah🚀"
+            content="Get inspired! Read quotes about Bitcoin by the creator Satoshi Nakomoto. HODLujah 🚀"
           />
           <meta name="og:title" content={siteTitle} />
           <meta
             property="og:description"
-            content="Get inspired! Read quotes about Bitcoin by the creator Satoshi Nakomoto. HODLujah🚀"
+            content="Get inspired! Read quotes about Bitcoin by the creator Satoshi Nakomoto. HODLujah 🚀"
           />
           <meta property="og:image" content="https://www.satoshivibes.com/preview.png" />
           <meta name="twitter:card" content="summary_large_image" />
