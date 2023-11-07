@@ -4,3 +4,27 @@
   padding: 1rem 1.5rem;
   background-color: #182538;
 }
+
+.snowflakePanel {
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem 0.5rem;
+  background-color: #182538;
+}
+
+/* you need to wrap the Image component for padding/etc */
+.imageWrapper {
+  box-sizing: content-box;
+  text-align: center;
+  object-fit: contain;
+  height: fit-content;
+  border-radius: 50%;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
