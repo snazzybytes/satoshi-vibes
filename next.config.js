@@ -23,6 +23,34 @@ module.exports = {
   /* favorite url redirects - custom fun names */
   async redirects() {
     return [
+      // Nostr protocol
+      {
+        source: "/nostr",
+        destination: "nostr:npub138guayty78ch9k42n3uyz5ch3jcaa3u390647hwq0c83m2lypekq6wk36k",
+        permanent: true,
+        basePath: false,
+      },
+      {
+        source: "/NostrPile",
+        destination: "https://nostr.build/creators/creator/?user=205",
+        permanent: true,
+      },
+      {
+        source: "/TheNostrPackSignal",
+        destination:
+          "https://signal.art/addstickers/#pack_id=b964fcc58f917f7e6cf09230afaf3b71&pack_key=21357a12cd0fad97a9c28e060d665303d23b656d5b362315fa32830878a7938f",
+        permanent: true,
+      },
+      {
+        source: "/TheNostrPackTelegram",
+        destination: "https://t.me/addstickers/TheNostrPack",
+        permanent: true,
+      },
+      {
+        source: "/NostrFAQ",
+        destination: "https://uselessshit.co/resources/nostr/",
+        permanent: true,
+      },
       // btc+ln
       {
         source: "/bitcoin",
@@ -74,33 +102,6 @@ module.exports = {
       {
         source: "/usdebt",
         destination: "https://usdebt.wtf/",
-        permanent: true,
-      },
-      // Nostr protocol
-      {
-        source: "/nostr",
-        destination: "nostr:npub138guayty78ch9k42n3uyz5ch3jcaa3u390647hwq0c83m2lypekq6wk36k",
-        permanent: true,
-      },
-      {
-        source: "/NostrPile",
-        destination: "https://nostr.build/creators/creator/?user=205",
-        permanent: true,
-      },
-      {
-        source: "/TheNostrPackSignal",
-        destination:
-          "https://signal.art/addstickers/#pack_id=b964fcc58f917f7e6cf09230afaf3b71&pack_key=21357a12cd0fad97a9c28e060d665303d23b656d5b362315fa32830878a7938f",
-        permanent: true,
-      },
-      {
-        source: "/TheNostrPackTelegram",
-        destination: "https://t.me/addstickers/TheNostrPack",
-        permanent: true,
-      },
-      {
-        source: "/NostrFAQ",
-        destination: "https://uselessshit.co/resources/nostr/",
         permanent: true,
       },
       // referrals
