@@ -157,3 +157,12 @@
   align-items: center;
   gap: 1rem;
 }
+
+/* helps us with the 'Zap Me' button styling (clickable area full width) */
+.buttonScriptItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
