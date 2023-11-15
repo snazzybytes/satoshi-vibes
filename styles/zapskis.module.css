@@ -1,0 +1,57 @@
+/* PAY ATTENTION to "height" when using flex layouts for "sticky footer" purposes if needed */
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1rem;
+  background-color: #6c00ca;
+}
+
+.zapPanel {
+  display: block;
+  text-align: center;
+  margin: 2rem 1rem;
+  padding: 1rem;
+  background-color: #182538;
+  width: 45%;
+}
+
+@media only screen and (max-width: 600px) {
+  .zapPanel {
+    width: 100%;
+  }
+}
+
+.zapPanel p {
+  display: block;
+  text-align: left;
+  text-indent: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.zapPanel a {
+  text-decoration: underline;
+}
+
+.zapPanel a:hover {
+  text-decoration: underline;
+  color: #8595ae;
+}
+
+.zapPanel h3 {
+  text-align: center;
+}
+
+/* wrap the Image component for padding/etc */
+.imageWrapper {
+  padding: 1rem;
+  box-sizing: content-box;
+  margin: 0rem 1rem;
+  text-align: center;
+}
+
+.header {
+  margin: 0.5rem 0 0;
+}

@@ -5,8 +5,8 @@ import Image from "next/image"
 
 const Custom404 = () => {
   return (
-    <Layout homeButton>
-      <div className={`${styles.errorPanel} ${utilStyles.boxShadow}`}>
+    <Layout bottomHomeButton>
+      <div className={`${styles.errorPanel} ${utilStyles.boxShadowRounded}`}>
         <h1 className={utilStyles.headingLg}>404 | Page Not Found</h1>
         <Image
           priority

@@ -103,7 +103,16 @@
 }
 
 /* adds box shadow to display panel divs - used by different components*/
-.boxShadow {
+.boxShadowRounded {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
   border-radius: 25px;
+}
+
+/* you need to wrap the Image component for padding/etc */
+.circleImageWrapper {
+  box-sizing: content-box;
+  text-align: center;
+  object-fit: contain;
+  height: fit-content;
+  border-radius: 50%;
 }

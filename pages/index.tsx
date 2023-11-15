@@ -41,7 +41,7 @@ export default function Categories({ allCategories }: Props) {
           alt=""
         />
       </div>
-      <div className={`${styles.categoryPanel} ${utilStyles.boxShadow}`}>
+      <div className={`${styles.categoryPanel} ${utilStyles.boxShadowRounded}`}>
         <div className={`${styles.categoriesContainer}`}>
           {allCategories.map(({ name, slug }, index) => (
             <Link

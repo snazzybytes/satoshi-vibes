@@ -18,7 +18,7 @@
 //       </Head>
 
 //       <div
-//         className={`${utilStyles.stagePanel} ${utilStyles.boxShadow} ${utilStyles.headingMd}`}
+//         className={`${utilStyles.stagePanel} ${utilStyles.boxShadowRounded} ${utilStyles.headingMd}`}
 //       >
 //         <div>
 //           <h2 className={utilStyles.headingLg}>Quotes</h2>

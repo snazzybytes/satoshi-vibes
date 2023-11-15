@@ -6,13 +6,13 @@ import utilStyles from "@/styles/utils.module.css"
 
 const About = () => {
   return (
-    <Layout homeButton genericHeroImg>
+    <Layout bottomHomeButton genericHeroImg>
       <Head>
         <title>About SatoshiVibes.com</title>
       </Head>
       <>
         <div
-          className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}
+          className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadowRounded}`}
         >
           <header className={styles.header}>
             <h1 className={utilStyles.heading2Xl}>About</h1>
@@ -31,7 +31,7 @@ const About = () => {
         </div>
 
         <div
-          className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}
+          className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadowRounded}`}
         >
           <h2 className={utilStyles.headingLg}>Pleb Movement</h2>
           <p>
@@ -42,7 +42,7 @@ const About = () => {
         </div>
 
         <div
-          className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}
+          className={`${styles.aboutPanel} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadowRounded}`}
         >
           <h2 className={utilStyles.headingLg}>Contribute</h2>
           <p>
