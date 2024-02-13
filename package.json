@@ -9,6 +9,7 @@
   "dependencies": {
     "@vercel/analytics": "^0.1.5",
     "@vercel/edge-config": "^0.1.1",
+    "@vercel/speed-insights": "^1.0.9",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "eslint-config-next": "^13.0.3",
