@@ -10,7 +10,7 @@
     "@vercel/analytics": "^0.1.5",
     "@vercel/edge-config": "^0.1.1",
     "@vercel/speed-insights": "^1.0.9",
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "date-fns": "^2.29.3",
     "eslint-config-next": "^13.0.3",
     "framer-motion": "^7.6.7",
@@ -30,11 +30,11 @@
   },
   "devDependencies": {
     "@types/node": "18.11.5",
-    "@types/react": "18.0.23",
-    "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.17",
+    "@types/react": "18.2.47",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33",
     "prettier": "^2.7.1",
-    "tailwindcss": "^3.1.8",
+    "tailwindcss": "^3.4.1",
     "typescript": "4.8.4"
   }
 }

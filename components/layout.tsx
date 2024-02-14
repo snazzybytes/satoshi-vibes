@@ -16,12 +16,12 @@ const audio_file = "/sounds/nosecondbest.mpeg"
 type Props = {
   home?: boolean
   genericHeroImg?: boolean
-  homeButton?: boolean
+  bottomHomeButton?: boolean
   backButton?: boolean
   children: React.ReactNode
 }
 
-const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Props) => {
+const Layout = ({ children, home, genericHeroImg, bottomHomeButton, backButton }: Props) => {
   const router = useRouter()
   const [audio, setAudio] = useState(null)
   const [playing, setPlaying] = useState(false)
@@ -45,7 +45,7 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
             name="description"
             content="Get inspired! Read quotes about Bitcoin by the creator Satoshi Nakomoto. HODLujah 🚀"
           />
-          <meta name="og:title" content={siteTitle} />
+          <meta property="og:title" key="og:title" content={siteTitle} />
           <meta
             property="og:description"
             content="Get inspired! Read quotes about Bitcoin by the creator Satoshi Nakomoto. HODLujah 🚀"
@@ -85,10 +85,11 @@ const Layout = ({ children, home, genericHeroImg, homeButton, backButton }: Prop
             </div>
           )}
         </header>
+        {/* everything below the hero image */}
         <main className={styles.mainStage}>
           {/* this is where all your child components get inserted */}
           {children}
-          {!home && homeButton && (
+          {!home && bottomHomeButton && (
             <Link href="/">
               <div className={`${styles.backHomeButton}`}>
                 <Image

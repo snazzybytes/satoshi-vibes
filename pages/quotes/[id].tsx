@@ -25,8 +25,11 @@ export default function Quote({ quoteData }: Props) {
     <Layout genericHeroImg backButton>
       <Head>
         <title>{quoteData.title}</title>
+        <meta property="og:title" key="og:title" content={quoteData.title} />
       </Head>
-      <div className={`${styles.article} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadow}`}>
+      <div
+        className={`${styles.article} ${utilStyles.breakWithHyphens} ${utilStyles.boxShadowRounded}`}
+      >
         <ClipboardCopyButton divQuoteRef={divQuoteRef} date={quoteData.date} />
         <h2
           className={`${utilStyles.headingLg}  ${utilStyles.truncateTitle} ${utilStyles.textCenter} `}

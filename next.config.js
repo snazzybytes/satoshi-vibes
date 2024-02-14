@@ -24,12 +24,12 @@ module.exports = {
   async redirects() {
     return [
       // Nostr protocol
-      {
-        source: "/nostr",
-        destination: "nostr:npub138guayty78ch9k42n3uyz5ch3jcaa3u390647hwq0c83m2lypekq6wk36k",
-        permanent: true,
-        basePath: false,
-      },
+      // {
+      //   source: "/nostr",
+      //   destination: "nostr:npub138guayty78ch9k42n3uyz5ch3jcaa3u390647hwq0c83m2lypekq6wk36k",
+      //   permanent: true,
+      //   basePath: false,
+      // },
       {
         source: "/NostrPile",
         destination: "https://nostr.build/creators/creator/?user=205",

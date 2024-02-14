@@ -1,25 +1,24 @@
 .torPanel {
   text-align: center;
   margin: 1rem;
-  padding: 1rem 1.5rem;
-  background-color: #182538;
-}
-
-.snowflakePanel {
-  text-align: center;
-  margin: 1rem;
   padding: 1rem 0.5rem;
   background-color: #182538;
 }
 
-/* you need to wrap the Image component for padding/etc */
-.imageWrapper {
-  box-sizing: content-box;
+/* .snowflakePanel {
   text-align: center;
-  object-fit: contain;
-  height: fit-content;
-  border-radius: 50%;
+  margin: 1rem;
+  padding: 1rem 0.5rem;
+  background-color: #182538;
+} */
+
+.snowflakePanel {
+  text-align: center;
+  margin: 0rem;
+  padding: 0rem;
+  background-color: #182538;
 }
+
 
 .imageContainer {
   display: flex;
@@ -27,4 +26,11 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+/* adds box shadow to display panel divs - used by different components*/
+.boxShadowRounded {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+  margin: 0rem;
 }

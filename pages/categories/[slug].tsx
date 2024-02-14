@@ -19,7 +19,7 @@ export default function Category({ quoteCategoryItems }: Props) {
         <title>{quoteCategoryItems.categoryName + ":" + siteTitle}</title>
       </Head>
 
-      <div className={`${styles.stagePanel} ${utilStyles.boxShadow} ${utilStyles.headingMd}`}>
+      <div className={`${styles.stagePanel} ${utilStyles.boxShadowRounded} ${utilStyles.headingMd}`}>
         <div>
           <h2 className={utilStyles.headingLg}>{quoteCategoryItems.categoryName}</h2>
           <ul className={utilStyles.list}>

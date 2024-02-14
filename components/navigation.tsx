@@ -4,7 +4,6 @@ import PricePanel from "./pricepanel"
 import React, { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import Script from "next/script"
 
 const data = [
   // internal pages use link, external pages use url
@@ -20,19 +19,20 @@ const data = [
     link: "/torproxy",
     image: "/icons/snowflake.svg",
   },
-  {
-    name: "Zap Me",
-    image: "/icons/lightningcircle.svg",
-    buttonScript: true,
-  },
-  // disable Strike button
+  //  TODO - disable, implement custom zap component
   // {
-  //   name: "Tip Jar",
-  //   url: "https://strike.me/lukeonchain/",
-  //   image: "/icons/qrcode.svg",
-  //   target: "_blank",
+  //   name: "Zap Me",
+  //   image: "/icons/lightning.svg",
+  //   buttonScript: true,
   // },
-  //  TODO - replace this with Nostr contact
+  // Strike tip button
+  {
+    name: "Tip Jar",
+    url: "https://strike.me/lukeonchain/",
+    image: "/icons/qrcode.svg",
+    target: "_blank",
+  },
+  //  TODO - replace this with Nostr contact instead? hmm
   {
     name: "Contact",
     url: "https://t.me/lukeonchain/",
@@ -92,28 +92,10 @@ const Navigation = () => {
                   </div>
                 </a>
               )}
-              {item.buttonScript && (
-                <a href={item.url} target="_blank">
-                  <div className={styles.menuItemContainer}>
-                    {item.image && (
-                      <button
-                        className={styles.buttonScriptItem}
-                        data-npub="npub138guayty78ch9k42n3uyz5ch3jcaa3u390647hwq0c83m2lypekq6wk36k"
-                        data-relays="wss://relay.damus.io"
-                      >
-                        <Image priority src={item.image} alt="" height={36} width={36} />
-                        {item.name}
-                      </button>
-                    )}
-                  </div>
-                </a>
-              )}
             </li>
           ))}
         </ul>
       </div>
-      {/* scripts go on the bottom in NextJS */}
-      <Script src="https://cdn.jsdelivr.net/npm/nostr-zap@0.21.0" />
     </>
   )
 }
