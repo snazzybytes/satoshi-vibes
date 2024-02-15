@@ -23,7 +23,7 @@ type Props = {
 
 const Layout = ({ children, home, genericHeroImg, bottomHomeButton, backButton }: Props) => {
   const router = useRouter()
-  const [audio, setAudio] = useState(null)
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
   const [playing, setPlaying] = useState(false)
   useEffect(() => {
     // client side: set audio inside useEffect() to avoid error (Audio type is not defined on server side)
